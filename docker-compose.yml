@@ -1,0 +1,50 @@
+version: '3'
+
+services:
+
+    apache:
+        build: .
+        image: jony-potfolio-apache
+        container_name: jony-potfolio-apache
+        restart: unless-stopped
+        volumes:
+            - ./www:/var/www/html/
+        ports:
+            - 80:80
+        networks:
+            - jonysthil
+
+    mysql:
+        image: mariadb:10.3
+        container_name: jony-potfolio-mysql
+        restart: unless-stopped
+        environment:
+            MYSQL_ROOT_PASSWORD: password
+        volumes:
+            - ./mysql:/var/lib/mysql
+        ports:
+            - 3306:3306
+        networks:
+            - jonysthil
+
+    phpmyadmin:
+        image: phpmyadmin/phpmyadmin
+        container_name: jony-potfolio-phpmyadmin
+        restart: unless-stopped
+        ports:
+            - 81:80
+        environment:
+            PMA_HOST: mysql
+            PMA_USER: root
+            PMA_PASSWORD: password
+            UPLOAD_LIMIT: 20000000
+        depends_on:
+            - mysql
+        networks:
+            - jonysthil
+
+# Definimos el nombre de la red.
+networks:
+    jonysthil:
+      driver: bridge
+
