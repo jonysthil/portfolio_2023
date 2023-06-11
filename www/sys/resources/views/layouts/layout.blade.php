@@ -235,19 +235,34 @@
                     </a>
                 </li>
 
-                <li class=" nav-item {{ request()->is('admin/experience*') ? 'active' : '' }}">
-                    <a href="{{ route('experiences') }}">
-                        <i class="la la-industry"></i>
-                        <span class="menu-title">Work Experience</span>
+                <li class=" nav-item">
+                    <a href="#">
+                        <i class="la la-info"></i>
+                        <span class="menu-title">Resume</span>
                     </a>
-                </li>
+                        <ul class="menu-content">
+                            <li class=" nav-item {{ request()->is('admin/experience*') ? 'active' : '' }}">
+                                <a href="{{ route('experiences') }}">
+                                    <i class="la la-industry"></i>
+                                    <span class="menu-title">Work Experience</span>
+                                </a>
+                            </li>
+            
+                            <li class=" nav-item {{ request()->is('admin/education*') ? 'active' : '' }}">
+                                <a href="{{ route('educations') }}">
+                                    <i class="la la-graduation-cap"></i>
+                                    <span class="menu-title">Education</span>
+                                </a>
+                            </li>
 
-                <li class=" nav-item {{ request()->is('admin/education*') ? 'active' : '' }}">
-                    <a href="{{ route('educations') }}">
-                        <i class="la la-graduation-cap"></i>
-                        <span class="menu-title">Education</span>
-                    </a>
-                </li>
+                            <li class=" nav-item {{ request()->is('admin/education*') ? 'active' : '' }}">
+                                <a href="{{ route('educations') }}">
+                                    <i class="la la-paw"></i>
+                                    <span class="menu-title">Skills</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
             </ul>
         </div>
     </div>

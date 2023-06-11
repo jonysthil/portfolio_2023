@@ -27,12 +27,10 @@ class EducationController extends Controller {
 
         $validator = Validator::make($request->all(), [
             'edu_place' => 'required',
-            'edu_title' => 'required',
-            'edu_description' => 'required'
+            'edu_title' => 'required'
         ],[
             'edu_place.required' => 'Please complete this field',
-            'edu_title.required' => 'Please complete this field',
-            'edu_description.required' => 'Please complete this field'
+            'edu_title.required' => 'Please complete this field'
         ]);
 
         if ($validator->fails()) {
@@ -81,12 +79,10 @@ class EducationController extends Controller {
 
         $validator = Validator::make($request->all(), [
             'edu_place' => 'required',
-            'edu_title' => 'required',
-            'edu_description' => 'required'
+            'edu_title' => 'required'
         ],[
             'edu_title.place' => 'Please complete this field',
-            'edu_title.required' => 'Please complete this field',
-            'edu_description.required' => 'Please complete this field'
+            'edu_title.required' => 'Please complete this field'
         ]);
 
         if ($validator->fails()) {

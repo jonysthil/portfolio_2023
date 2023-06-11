@@ -85,9 +85,8 @@
                         <div class="row">
                             <div class="col-md-12">
                                 <div class="form-group">
-                                    <label for="edu_description">Description<span class="text-danger">*</span></label>
+                                    <label for="edu_description">Description</label>
                                     <textarea id="edu_description" rows="5" class="form-control @error('edu_description') is-invalid @enderror" name="edu_description">{{ old('edu_description') }}</textarea>
-                                    @error('edu_description') <span class="text-danger">{!! $message !!}</span> @enderror
                                 </div>
                             </div>
                         </div>
