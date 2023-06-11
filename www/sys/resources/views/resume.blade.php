@@ -14,7 +14,8 @@
     <!-- Item -->
     @foreach ($experience as $exp)    
     <article class="timeline__item">
-        <h5 class="title title--h4 timeline__title">{{ $exp->exp_title }}</h5>
+        <h5 class="title title--h4 timeline__title">{{ $exp->exp_place }}</h5>
+        <h3 class="title title--h4 timeline__title"><small><i>{{ $exp->exp_title }}</i></small></h3>
         <span class="timeline__period">
             {{ Tools::months($exp->exp_month_start) }} {{ $exp->exp_year_start }} - 
             @if ($exp->exp_current)
@@ -48,7 +49,8 @@
     <!-- Item -->
     @foreach ($education as $edu)
     <article class="timeline__item">
-        <h5 class="title title--h4 timeline__title">{{ $edu->edu_title }}</h5>
+        <h5 class="title title--h4 timeline__title">{{ $edu->edu_place }}</h5>
+        <h3 class="title title--h4 timeline__title"><small><i>{{ $edu->edu_title }}</i></small></h3>
         <span class="timeline__period">
             {{ Tools::months($edu->edu_month_start) }} {{ $edu->edu_year_start }} - 
             @if ($edu->edu_current)

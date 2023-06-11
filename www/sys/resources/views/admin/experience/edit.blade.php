@@ -17,7 +17,14 @@
                         @csrf
                         @method('put')
                         <div class="row">
-                            <div class="col-md-12">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="exp_place">Place<span class="text-danger">*</span></label>
+                                    <input type="text" id="exp_place" name="exp_place" value="{{ old('exp_place', $experience->exp_place) }}" class="form-control @error('exp_place') is-invalid @enderror">
+                                    @error('exp_place') <span class="text-danger">{!! $message !!}</span> @enderror
+                                </div>
+                            </div>
+                            <div class="col-md-6">
                                 <div class="form-group">
                                     <label for="exp_title">Title<span class="text-danger">*</span></label>
                                     <input type="text" id="exp_title" name="exp_title" value="{{ old('exp_title', $experience->exp_title) }}" class="form-control @error('exp_title') is-invalid @enderror">

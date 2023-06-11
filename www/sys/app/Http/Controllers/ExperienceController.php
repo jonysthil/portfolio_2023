@@ -26,9 +26,11 @@ class ExperienceController extends Controller {
     public function saveExperience(Request $request) {
 
         $validator = Validator::make($request->all(), [
+            'exp_place' => 'required',
             'exp_title' => 'required',
             'exp_description' => 'required'
         ],[
+            'exp_place.required' => 'Por favor completa este campo',
             'exp_title.required' => 'Por favor completa este campo',
             'exp_description.required' => 'Por favor completa este campo'
         ]);
@@ -40,6 +42,7 @@ class ExperienceController extends Controller {
         }
 
         $data = array(
+            'exp_place' => $request->get('exp_place'),
             'exp_title' => $request->get('exp_title'),
             'exp_description' => $request->get('exp_description'),
             'exp_month_start' => $request->get('exp_month_start'),
@@ -77,9 +80,11 @@ class ExperienceController extends Controller {
     public function updateExperience(Request $request, $exp_id) {
 
         $validator = Validator::make($request->all(), [
+            'exp_place' => 'required',
             'exp_title' => 'required',
             'exp_description' => 'required'
         ],[
+            'exp_title.place' => 'Por favor completa este campo',
             'exp_title.required' => 'Por favor completa este campo',
             'exp_description.required' => 'Por favor completa este campo'
         ]);
@@ -91,6 +96,7 @@ class ExperienceController extends Controller {
         }
 
         $data = array(
+            'exp_place' => $request->get('exp_place'),
             'exp_title' => $request->get('exp_title'),
             'exp_description' => $request->get('exp_description'),
             'exp_month_start' => $request->get('exp_month_start'),
