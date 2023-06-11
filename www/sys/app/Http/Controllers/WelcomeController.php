@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\AboutModel;
+use App\Models\EducationModel;
 use App\Models\ExperienceModel;
 use App\Models\ServiceModel;
 use Illuminate\Http\Request;
@@ -19,7 +20,8 @@ class WelcomeController extends Controller {
 
     public function resume() {
         $data = array(
-            'experiences' => ExperienceModel::publicExperienceAll()
+            'experience' => ExperienceModel::publicExperienceAll(),
+            'education' => EducationModel::publicEducationAll()
         );
         return view('resume', $data);
     }

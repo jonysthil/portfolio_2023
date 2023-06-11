@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AboutController;
+use App\Http\Controllers\EducationController;
 use App\Http\Controllers\ExperienceController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\LoginController;
@@ -54,6 +55,17 @@ Route::group(['prefix' => 'admin'], function() {
         Route::delete('/experience/{exp_id}/delete', [ExperienceController::class, 'deleteExperience'])->name('experience.delete');
         Route::get('/experience/{exp_id}/status', [ExperienceController::class,'statusExperience'])->name('experience.status');
         Route::get('/experience/order', [ExperienceController::class,'orderExperience'])->name('experience.order');
+    
+        Route::get('/education', [EducationController::class, 'list'])->name('educations');
+        Route::get('/education/new', [EducationController::class, 'newEducation'])->name('education.new');
+        Route::post('/education/save', [EducationController::class, 'saveEducation'])->name('education.save');
+        Route::get('/education/{edu_id}/detail', [EducationController::class, 'detailEducation'])->name('education.detail');
+        Route::get('/education/{edu_id}/edit', [EducationController::class, 'editEducation'])->name('education.edit');
+        Route::put('/education/{edu_id}/update', [EducationController::class, 'updateEducation'])->name('education.update');
+        Route::delete('/education/{edu_id}/delete', [EducationController::class, 'deleteEducation'])->name('education.delete');
+        Route::get('/education/{edu_id}/status', [EducationController::class,'statusEducation'])->name('education.status');
+        Route::get('/education/order', [EducationController::class,'orderEducation'])->name('education.order');
+    
     });
 
 });

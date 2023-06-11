@@ -12,7 +12,7 @@
 <h2 class="title title--h2"><span class="box icon-box"><i class="font-icon feathericon-briefcase"></i></span>Experience</h2>
 <div class="timeline">
     <!-- Item -->
-    @foreach ($experiences as $exp)    
+    @foreach ($experience as $exp)    
     <article class="timeline__item">
         <h5 class="title title--h4 timeline__title">{{ $exp->exp_title }}</h5>
         <span class="timeline__period">
@@ -46,13 +46,22 @@
 <h2 class="title title--h2"><span class="box icon-box"><i class="font-icon feathericon-book-open"></i></span>Education</h2>
 <div class="timeline">
     <!-- Item -->
+    @foreach ($education as $edu)
     <article class="timeline__item">
-        <h5 class="title title--h4 timeline__title">University School of the Arts</h5>
-        <span class="timeline__period">2007 — 2009</span>
-        <p class="timeline__description">Nemo enims ipsam voluptatem, blanditiis praesentium voluptum delenit atque corrupti, quos dolores et quas molestias exceptur.</p>
+        <h5 class="title title--h4 timeline__title">{{ $edu->edu_title }}</h5>
+        <span class="timeline__period">
+            {{ Tools::months($edu->edu_month_start) }} {{ $edu->edu_year_start }} - 
+            @if ($edu->edu_current)
+                Present
+            @else
+            {{ Tools::months($edu->edu_month_finish) }} {{ $edu->edu_year_finish }}
+            @endif
+        </span>
+        <p class="timeline__description">{!! $edu->edu_description !!}</p>
     </article>
+    @endforeach
                 
-    <!-- Item -->
+    {{-- <!-- Item -->
     <article class="timeline__item">
         <h5 class="title title--h4 timeline__title">New York Academy of Art</h5>
         <span class="timeline__period">2005 — 2007</span>
@@ -64,7 +73,7 @@
         <h5 class="title title--h4 timeline__title">High School of Art and Design</h5>
         <span class="timeline__period">2003 — 2005</span>
         <p class="timeline__description">Duis aute irure dolor in reprehenderit in voluptate, quila voluptas  mag odit aut fugit, sed consequuntur magni dolores eos.</p>
-    </article>
+    </article> --}}
 </div>
 
 <!-- Skills -->

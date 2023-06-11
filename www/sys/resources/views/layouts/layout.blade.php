@@ -243,7 +243,7 @@
                 </li>
 
                 <li class=" nav-item {{ request()->is('admin/education*') ? 'active' : '' }}">
-                    <a href="{{ route('services') }}">
+                    <a href="{{ route('educations') }}">
                         <i class="la la-graduation-cap"></i>
                         <span class="menu-title">Education</span>
                     </a>
