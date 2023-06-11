@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AboutController;
+use App\Http\Controllers\ExperienceController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\ServiceController;
@@ -43,6 +44,16 @@ Route::group(['prefix' => 'admin'], function() {
         Route::get('/service/{ser_id}/status', [ServiceController::class,'statusService'])->name('service.status');
         Route::get('/service/order', [ServiceController::class,'orderService'])->name('service.order');
         Route::post('/service/{ser_id}/icon', [ServiceController::class,'iconService'])->name('service.icon');
+
+        Route::get('/experience', [ExperienceController::class, 'list'])->name('experiences');
+        Route::get('/experience/new', [ExperienceController::class, 'newExperience'])->name('experience.new');
+        Route::post('/experience/save', [ExperienceController::class, 'saveExperience'])->name('experience.save');
+        Route::get('/experience/{exp_id}/detail', [ExperienceController::class, 'detailExperience'])->name('experience.detail');
+        Route::get('/experience/{exp_id}/edit', [ExperienceController::class, 'editExperience'])->name('experience.edit');
+        Route::put('/experience/{exp_id}/update', [ExperienceController::class, 'updateExperience'])->name('experience.update');
+        Route::delete('/experience/{exp_id}/delete', [ExperienceController::class, 'deleteExperience'])->name('experience.delete');
+        Route::get('/experience/{exp_id}/status', [ExperienceController::class,'statusExperience'])->name('experience.status');
+        Route::get('/experience/order', [ExperienceController::class,'orderExperience'])->name('experience.order');
     });
 
 });

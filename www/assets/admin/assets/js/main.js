@@ -29,6 +29,17 @@ $(document).ready(function() {
         });
     });
 
+    $(".activeLastDate").change(function () {
+        var data = $(this).prop("checked");
+        if(data) {
+            $(".exp_month_finish").prop( "disabled", true );
+            $(".exp_year_finish").prop( "disabled", true );
+        } else {
+            $(".exp_month_finish").prop( "disabled", false );
+            $(".exp_year_finish").prop( "disabled", false );
+        }
+    });
+
     
 
 });

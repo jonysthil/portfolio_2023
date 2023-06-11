@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\AboutModel;
+use App\Models\ExperienceModel;
 use App\Models\ServiceModel;
 use Illuminate\Http\Request;
 
@@ -17,7 +18,10 @@ class WelcomeController extends Controller {
     }
 
     public function resume() {
-        return view('resume');
+        $data = array(
+            'experiences' => ExperienceModel::publicExperienceAll()
+        );
+        return view('resume', $data);
     }
 
     public function portfolio() {

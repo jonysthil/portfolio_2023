@@ -1,6 +1,6 @@
 @extends('layouts.layout')
 
-@section('title', 'New Service')
+@section('title', 'Detail Service')
 
 @section('container')
 

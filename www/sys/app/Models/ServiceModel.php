@@ -40,19 +40,18 @@ class ServiceModel extends Model {
 					->delete();
 	}
 
-	public function scopePublicServiceAll($query) {
-		return $query->select('*')
-					->where('ser_status', 1)
-					->orderBy('ser_order', 'asc')
-                    ->get();
-	}
-
 	public function scopeOrderService($query, $ser_id, $ser_order) {
         return $query->where('ser_id', $ser_id)
                     ->where('ser_order', '!=', $ser_order)
                     ->update(array('ser_order' => $ser_order));
     }
 
+	public function scopePublicServiceAll($query) {
+		return $query->select('*')
+					->where('ser_status', 1)
+					->orderBy('ser_order', 'asc')
+                    ->get();
+	}
 
 	
 }

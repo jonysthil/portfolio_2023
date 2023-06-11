@@ -9,6 +9,39 @@
     <h1 class="title title--h1 title__separate">Resume</h1>
 </div>
 
+<h2 class="title title--h2"><span class="box icon-box"><i class="font-icon feathericon-briefcase"></i></span>Experience</h2>
+<div class="timeline">
+    <!-- Item -->
+    @foreach ($experiences as $exp)    
+    <article class="timeline__item">
+        <h5 class="title title--h4 timeline__title">{{ $exp->exp_title }}</h5>
+        <span class="timeline__period">
+            {{ Tools::months($exp->exp_month_start) }} {{ $exp->exp_year_start }} - 
+            @if ($exp->exp_current)
+                Present
+            @else
+            {{ Tools::months($exp->exp_month_finish) }} {{ $exp->exp_year_finish }}
+            @endif
+        </span>
+        <p class="timeline__description">{!! $exp->exp_description !!}</p>
+    </article>
+    @endforeach
+                
+    {{-- <!-- Item -->
+    <article class="timeline__item">
+        <h5 class="title title--h4 timeline__title">Art Director</h5>
+        <span class="timeline__period">2013 — 2015</span>
+        <p class="timeline__description">Nemo enims ipsam voluptatem, blanditiis praesentium voluptum delenit atque corrupti, quos dolores et quas molestias exceptur.</p>
+    </article>
+                
+    <!-- Item -->
+    <article class="timeline__item">
+        <h5 class="title title--h4 timeline__title">Web Designer</h5>
+        <span class="timeline__period">2010 — 2013</span>
+        <p class="timeline__description">Nemo enims ipsam voluptatem, blanditiis praesentium voluptum delenit atque corrupti, quos dolores et quas molestias exceptur.</p>
+    </article> --}}
+</div>
+
 <!-- Experience -->
 <h2 class="title title--h2"><span class="box icon-box"><i class="font-icon feathericon-book-open"></i></span>Education</h2>
 <div class="timeline">
@@ -31,30 +64,6 @@
         <h5 class="title title--h4 timeline__title">High School of Art and Design</h5>
         <span class="timeline__period">2003 — 2005</span>
         <p class="timeline__description">Duis aute irure dolor in reprehenderit in voluptate, quila voluptas  mag odit aut fugit, sed consequuntur magni dolores eos.</p>
-    </article>
-</div>
-
-<h2 class="title title--h2"><span class="box icon-box"><i class="font-icon feathericon-briefcase"></i></span>Experience</h2>
-<div class="timeline">
-    <!-- Item -->
-    <article class="timeline__item">
-        <h5 class="title title--h4 timeline__title">Creative Director</h5>
-        <span class="timeline__period">2015 — Present</span>
-        <p class="timeline__description">Nemo enim ipsam voluptatem blanditiis praesentium voluptum delenit atque corrupti, quos dolores et qvuas molestias exceptur.</p>
-    </article>
-                
-    <!-- Item -->
-    <article class="timeline__item">
-        <h5 class="title title--h4 timeline__title">Art Director</h5>
-        <span class="timeline__period">2013 — 2015</span>
-        <p class="timeline__description">Nemo enims ipsam voluptatem, blanditiis praesentium voluptum delenit atque corrupti, quos dolores et quas molestias exceptur.</p>
-    </article>
-                
-    <!-- Item -->
-    <article class="timeline__item">
-        <h5 class="title title--h4 timeline__title">Web Designer</h5>
-        <span class="timeline__period">2010 — 2013</span>
-        <p class="timeline__description">Nemo enims ipsam voluptatem, blanditiis praesentium voluptum delenit atque corrupti, quos dolores et quas molestias exceptur.</p>
     </article>
 </div>
 
