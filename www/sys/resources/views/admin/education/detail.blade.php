@@ -39,6 +39,7 @@
                         <input data-url="{{ route('education.status', $education->edu_id) }}" type="checkbox" class="custom-control-input isActiveElement" id="edu_status" {{ ($education->edu_status) ? 'checked' : '' }} >
                         <label class="custom-control-label" for="edu_status">Status <span id="up-control" class="text-{{ ($education->edu_status) ? 'success' : 'danger' }}">{{ ($education->edu_status) ? 'Online' : 'Offline' }}</span></label>
                     </div>
+                    <p><b>Place:</b> {{ $education->edu_place }}</p>
                     <p><b>Title:</b> {{ $education->edu_title }}</p>
                     <p><b>Start Date:</b> {{ Tools::months($education->edu_month_start) }} {{ $education->edu_year_start }}</p>
                     <p><b>End Date:</b> 

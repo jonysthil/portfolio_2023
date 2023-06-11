@@ -61,14 +61,14 @@
                                     <label for="exp_month_finish">Finish month and year</label>
                                     <div class="row">
                                         <div class="col-md-6">
-                                            <select class="form-control @error('exp_month_finish') is-invalid @enderror exp_month_finish" name="exp_month_finish" id="exp_month_finish" {{ (old('exp_current', $experience->exp_current)) ? 'disabled' : '' }}>
+                                            <select class="form-control @error('exp_month_finish') is-invalid @enderror date_month_finish" name="exp_month_finish" id="exp_month_finish" {{ (old('exp_current', $experience->exp_current)) ? 'disabled' : '' }}>
                                                 @for ($i = 0; $i <= 11; $i++)
                                                     <option {{ (old('exp_month_finish', $experience->exp_month_finish) == $i) ? 'selected' : '' }} value='{{ $i }}'>{{ Tools::months($i) }}</option>
                                                 @endfor
                                             </select>
                                         </div>
                                         <div class="col-md-6">
-                                            <select class="form-control @error('exp_year_finish') is-invalid @enderror exp_year_finish" name="exp_year_finish" id="exp_year_finish" {{ (old('exp_current', $experience->exp_current)) ? 'disabled' : '' }}>
+                                            <select class="form-control @error('exp_year_finish') is-invalid @enderror date_year_finish" name="exp_year_finish" id="exp_year_finish" {{ (old('exp_current', $experience->exp_current)) ? 'disabled' : '' }}>
                                                 @for ($j = date('Y'); $j >= 1800; $j--)
                                                     <option {{ (old('exp_year_finish', $experience->exp_year_finish) == $j) ? 'selected' : '' }} value="{{ $j }}">{{ $j }}</option>
                                                 @endfor

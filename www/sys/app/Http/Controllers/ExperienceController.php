@@ -30,9 +30,9 @@ class ExperienceController extends Controller {
             'exp_title' => 'required',
             'exp_description' => 'required'
         ],[
-            'exp_place.required' => 'Por favor completa este campo',
-            'exp_title.required' => 'Por favor completa este campo',
-            'exp_description.required' => 'Por favor completa este campo'
+            'exp_place.required' => 'Please complete this field',
+            'exp_title.required' => 'Please complete this field',
+            'exp_description.required' => 'Please complete this field'
         ]);
 
         if ($validator->fails()) {
@@ -84,9 +84,9 @@ class ExperienceController extends Controller {
             'exp_title' => 'required',
             'exp_description' => 'required'
         ],[
-            'exp_title.place' => 'Por favor completa este campo',
-            'exp_title.required' => 'Por favor completa este campo',
-            'exp_description.required' => 'Por favor completa este campo'
+            'exp_title.place' => 'Please complete this field',
+            'exp_title.required' => 'Please complete this field',
+            'exp_description.required' => 'Please complete this field'
         ]);
 
         if ($validator->fails()) {

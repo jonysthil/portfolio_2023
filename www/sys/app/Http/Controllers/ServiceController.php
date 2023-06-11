@@ -35,8 +35,8 @@ class ServiceController extends Controller {
             'ser_name' => 'required',
             'ser_description' => 'required',
         ],[
-            'ser_name.required' => 'Por favor completa este campo',
-            'ser_description.required' => 'Por favor completa este campo',
+            'ser_name.required' => 'Please complete this field',
+            'ser_description.required' => 'Please complete this field',
         ]);
 
         if ($validator->fails()) {
@@ -82,8 +82,8 @@ class ServiceController extends Controller {
             'ser_name' => 'required',
             'ser_description' => 'required',
         ],[
-            'ser_name.required' => 'Por favor completa este campo',
-            'ser_description.required' => 'Por favor completa este campo',
+            'ser_name.required' => 'Please complete this field',
+            'ser_description.required' => 'Please complete this field',
         ]);
 
         if ($validator->fails()) {

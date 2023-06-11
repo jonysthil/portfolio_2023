@@ -22,7 +22,7 @@ class AboutController extends Controller {
         $validator = Validator::make($request->all(), [
             'ab_about' => 'required',
         ],[
-            'ab_about.required' => 'Por favor completa este campo',
+            'ab_about.required' => 'Please complete this field',
         ]);
 
         if ($validator->fails()) {

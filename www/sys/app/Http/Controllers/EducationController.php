@@ -26,11 +26,13 @@ class EducationController extends Controller {
     public function saveEducation(Request $request) {
 
         $validator = Validator::make($request->all(), [
+            'edu_place' => 'required',
             'edu_title' => 'required',
             'edu_description' => 'required'
         ],[
-            'edu_title.required' => 'Por favor completa este campo',
-            'edu_description.required' => 'Por favor completa este campo'
+            'edu_place.required' => 'Please complete this field',
+            'edu_title.required' => 'Please complete this field',
+            'edu_description.required' => 'Please complete this field'
         ]);
 
         if ($validator->fails()) {
@@ -40,6 +42,7 @@ class EducationController extends Controller {
         }
 
         $data = array(
+            'edu_place' => $request->get('edu_place'),
             'edu_title' => $request->get('edu_title'),
             'edu_description' => $request->get('edu_description'),
             'edu_month_start' => $request->get('edu_month_start'),
@@ -77,11 +80,13 @@ class EducationController extends Controller {
     public function updateEducation(Request $request, $edu_id) {
 
         $validator = Validator::make($request->all(), [
+            'edu_place' => 'required',
             'edu_title' => 'required',
             'edu_description' => 'required'
         ],[
-            'edu_title.required' => 'Por favor completa este campo',
-            'edu_description.required' => 'Por favor completa este campo'
+            'edu_title.place' => 'Please complete this field',
+            'edu_title.required' => 'Please complete this field',
+            'edu_description.required' => 'Please complete this field'
         ]);
 
         if ($validator->fails()) {
@@ -91,6 +96,7 @@ class EducationController extends Controller {
         }
 
         $data = array(
+            'edu_place' => $request->get('edu_place'),
             'edu_title' => $request->get('edu_title'),
             'edu_description' => $request->get('edu_description'),
             'edu_month_start' => $request->get('edu_month_start'),

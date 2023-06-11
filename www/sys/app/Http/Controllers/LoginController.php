@@ -31,8 +31,8 @@ class LoginController extends Controller {
             'email' => 'required',
             'pass' => 'required',
         ],[
-            'email.required' => 'Por favor completa este campo',
-            'pass.required' => 'Por favor completa este campo',
+            'email.required' => 'Please complete this field',
+            'pass.required' => 'Please complete this field',
         ]);
 
         if ($validator->fails()) {

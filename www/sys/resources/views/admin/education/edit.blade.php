@@ -17,7 +17,14 @@
                         @csrf
                         @method('put')
                         <div class="row">
-                            <div class="col-md-12">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="edu_place">Place<span class="text-danger">*</span></label>
+                                    <input type="text" id="edu_place" name="edu_place" value="{{ old('edu_place', $education->edu_place) }}" class="form-control @error('edu_place') is-invalid @enderror">
+                                    @error('edu_place') <span class="text-danger">{!! $message !!}</span> @enderror
+                                </div>
+                            </div>
+                            <div class="col-md-6">
                                 <div class="form-group">
                                     <label for="edu_title">Title<span class="text-danger">*</span></label>
                                     <input type="text" id="edu_title" name="edu_title" value="{{ old('edu_title', $education->edu_title) }}" class="form-control @error('edu_title') is-invalid @enderror">
@@ -54,14 +61,14 @@
                                     <label for="edu_month_finish">Finish month and year</label>
                                     <div class="row">
                                         <div class="col-md-6">
-                                            <select class="form-control @error('edu_month_finish') is-invalid @enderror edu_month_finish" name="edu_month_finish" id="edu_month_finish" {{ (old('edu_current', $education->edu_current)) ? 'disabled' : '' }}>
+                                            <select class="form-control @error('edu_month_finish') is-invalid @enderror date_month_finish" name="edu_month_finish" id="edu_month_finish" {{ (old('edu_current', $education->edu_current)) ? 'disabled' : '' }}>
                                                 @for ($i = 0; $i <= 11; $i++)
                                                     <option {{ (old('edu_month_finish', $education->edu_month_finish) == $i) ? 'selected' : '' }} value='{{ $i }}'>{{ Tools::months($i) }}</option>
                                                 @endfor
                                             </select>
                                         </div>
                                         <div class="col-md-6">
-                                            <select class="form-control @error('edu_year_finish') is-invalid @enderror edu_year_finish" name="edu_year_finish" id="edu_year_finish" {{ (old('edu_current', $education->edu_current)) ? 'disabled' : '' }}>
+                                            <select class="form-control @error('edu_year_finish') is-invalid @enderror date_year_finish" name="edu_year_finish" id="edu_year_finish" {{ (old('edu_current', $education->edu_current)) ? 'disabled' : '' }}>
                                                 @for ($j = date('Y'); $j >= 1800; $j--)
                                                     <option {{ (old('edu_year_finish', $education->edu_year_finish) == $j) ? 'selected' : '' }} value="{{ $j }}">{{ $j }}</option>
                                                 @endfor
