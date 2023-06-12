@@ -126,6 +126,8 @@ class EducationController extends Controller {
 
         EducationModel::educationUpdate($data, $edu_id);
 
+        echo $edu_id;
+
     }
 
     public function orderEducation(Request $request) {

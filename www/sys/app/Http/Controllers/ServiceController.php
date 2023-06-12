@@ -120,6 +120,8 @@ class ServiceController extends Controller {
 
         ServiceModel::serviceUpdate($data, $ser_id);
 
+        echo $ser_id;
+
     }
 
     public function orderService(Request $request) {

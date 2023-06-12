@@ -8,7 +8,7 @@ $(document).ready(function() {
     
         if (typeof data !== "undefined" && typeof data_url !== "undefined") {
             $.get(data_url, { data: data }, function (response) {
-                $("#up-control").load(" #up-control");
+                $("#up-control-" + response).load(" #up-control-" + response);
                 toastr.success('The status changed successfully', 'Modifying data', { "closeButton": true });
             });
         }

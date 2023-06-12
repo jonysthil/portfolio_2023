@@ -130,6 +130,7 @@ class ExperienceController extends Controller {
 
         ExperienceModel::experienceUpdate($data, $exp_id);
 
+        echo $exp_id;
     }
 
     public function orderExperience(Request $request) {

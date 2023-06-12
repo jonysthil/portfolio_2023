@@ -84,32 +84,32 @@
     <div class="swiper-wrapper">
         <!-- Item client -->
         <figure class="swiper-slide">
-            <a href="#"><img class="logo-client" src="assets/images/clients/logo-1-color.png" alt="Logo" /></a>
+            <img class="img-gray" src="assets/images/clients/logo-1-color.png" alt="Logo" />
         </figure>
             
         <!-- Item client -->
         <figure class="swiper-slide">
-            <a href="#"><img class="logo-client" src="assets/images/clients/logo-2-color.png" alt="Logo" /></a>
+            <img class="img-gray" src="assets/images/clients/logo-2-color.png" alt="Logo" />
         </figure>
 
         <!-- Item client -->
         <figure class="swiper-slide">
-            <a href="#"><img class="logo-client" src="assets/images/clients/logo-3-color.png" alt="Logo" /></a>
+            <img class="img-gray" src="assets/images/clients/logo-3-color.png" alt="Logo" />
         </figure>
 
         <!-- Item client -->
         <figure class="swiper-slide">
-            <a href="#"><img class="logo-client" src="assets/images/clients/logo-4-color.png" alt="Logo" /></a>
+            <img class="img-gray" src="assets/images/clients/logo-4-color.png" alt="Logo" />
         </figure>
             
         <!-- Item client -->
         <figure class="swiper-slide">
-            <a href="#"><img class="logo-client" src="assets/images/clients/logo-5-color.png" alt="Logo" /></a>
+            <img class="img-gray" src="assets/images/clients/logo-5-color.png" alt="Logo" />
         </figure>
             
         <!-- Item client -->
         <figure class="swiper-slide">
-            <a href="#"><img class="logo-client" src="assets/images/clients/logo-6-color.png" alt="Logo" /></a>
+            <img class="img-gray" src="assets/images/clients/logo-6-color.png" alt="Logo" />
         </figure>
     </div>
         

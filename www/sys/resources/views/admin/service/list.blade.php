@@ -46,8 +46,9 @@
                                 <tr id="ord-{{ $ser->ser_id }}">
                                     <td class="text-center"><span class="loop-{{ $ser->ser_id }}">{{ $loop->iteration }}</span></td>
                                     <td class="text-center">
-                                        <div class="badge badge-{{ ($ser->ser_status) ? 'success' : 'danger' }} badge-square">
-                                            <span>{{ ($ser->ser_status) ? 'Online' : 'Offline' }}</span>
+                                        <div class="custom-control-inline custom-switch">
+                                            <input data-url="{{ route('service.status', $ser->ser_id) }}" type="checkbox" class="custom-control-input isActiveElement" id="ser_status-{{ $ser->ser_id }}" {{ ($ser->ser_status) ? 'checked' : '' }} >
+                                            <label class="custom-control-label" for="ser_status-{{ $ser->ser_id }}"><span id="up-control-{{ $ser->ser_id }}" class="text-{{ ($ser->ser_status) ? 'success' : 'danger' }}">{{ ($ser->ser_status) ? 'Online' : 'Offline' }}</span></label>
                                         </div>
                                     </td>
                                     <td class="text-center">

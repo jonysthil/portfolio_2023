@@ -37,7 +37,7 @@
 
                     <div class="custom-control-inline custom-switch">
                         <input data-url="{{ route('experience.status', $experience->exp_id) }}" type="checkbox" class="custom-control-input isActiveElement" id="exp_status" {{ ($experience->exp_status) ? 'checked' : '' }} >
-                        <label class="custom-control-label" for="exp_status">Status <span id="up-control" class="text-{{ ($experience->exp_status) ? 'success' : 'danger' }}">{{ ($experience->exp_status) ? 'Online' : 'Offline' }}</span></label>
+                        <label class="custom-control-label" for="exp_status">Status <span id="up-control-{{ $experience->exp_id }}" class="text-{{ ($experience->exp_status) ? 'success' : 'danger' }}">{{ ($experience->exp_status) ? 'Online' : 'Offline' }}</span></label>
                     </div>
                     <br>
                     <p><b>Place:</b> {{ $experience->exp_place }}</p>

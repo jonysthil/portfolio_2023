@@ -45,8 +45,9 @@
                                 <tr id="ord-{{ $edu->edu_id }}">
                                     <td class="text-center"><span class="loop-{{ $edu->edu_id }}">{{ $loop->iteration }}</span></td>
                                     <td class="text-center">
-                                        <div class="badge badge-{{ ($edu->edu_status) ? 'success' : 'danger' }} badge-square">
-                                            <span>{{ ($edu->edu_status) ? 'Online' : 'Offline' }}</span>
+                                        <div class="custom-control-inline custom-switch">
+                                            <input data-url="{{ route('education.status', $edu->edu_id) }}" type="checkbox" class="custom-control-input isActiveElement" id="edu_status-{{ $edu->edu_id }}" {{ ($edu->edu_status) ? 'checked' : '' }} >
+                                            <label class="custom-control-label" for="edu_status-{{ $edu->edu_id }}"><span id="up-control-{{ $edu->edu_id }}" class="text-{{ ($edu->edu_status) ? 'success' : 'danger' }}">{{ ($edu->edu_status) ? 'Online' : 'Offline' }}</span></label>
                                         </div>
                                     </td>
                                     <td>{{ $edu->edu_title }}</td>

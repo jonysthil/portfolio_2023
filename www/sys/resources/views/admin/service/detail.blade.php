@@ -38,7 +38,7 @@
 
                     <div class="custom-control-inline custom-switch">
                         <input data-url="{{ route('service.status', $service->ser_id) }}" type="checkbox" class="custom-control-input isActiveElement" id="ser_status" {{ ($service->ser_status) ? 'checked' : '' }} >
-                        <label class="custom-control-label" for="ser_status">Status <span id="up-control" class="text-{{ ($service->ser_status) ? 'success' : 'danger' }}">{{ ($service->ser_status) ? 'Online' : 'Offline' }}</span></label>
+                        <label class="custom-control-label" for="ser_status">Status <span id="up-control-{{ $service->ser_id }}" class="text-{{ ($service->ser_status) ? 'success' : 'danger' }}">{{ ($service->ser_status) ? 'Online' : 'Offline' }}</span></label>
                     </div>
                     <p><b>Title:</b> {{ $service->ser_name }}</p>
                     <p><b>Description:</b></p>

@@ -39,6 +39,7 @@
     <!-- Styles -->
 	<link rel="stylesheet" type="text/css" href="{{ asset('assets/styles/vendors/bootstrap.min.css') }}"/>
 	<link rel="stylesheet" type="text/css" href="{{ asset('assets/styles/style.css') }}"/>
+	<link rel="stylesheet" type="text/css" href="{{ asset('assets/styles/custom.css') }}"/>
 
 	<!-- Mapbox-->
     <script src='https://api.mapbox.com/mapbox-gl-js/v1.4.1/mapbox-gl.js'></script>
