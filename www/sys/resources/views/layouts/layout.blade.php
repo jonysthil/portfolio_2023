@@ -256,7 +256,7 @@
                             </li>
 
                             <li class=" nav-item {{ request()->is('admin/skill*') ? 'active' : '' }}">
-                                <a href="{{ route('educations') }}">
+                                <a href="{{ route('skills') }}">
                                     <i class="la la-paw"></i>
                                     <span class="menu-title">Skills</span>
                                 </a>

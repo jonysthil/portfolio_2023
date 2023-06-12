@@ -6,6 +6,7 @@ use App\Models\AboutModel;
 use App\Models\EducationModel;
 use App\Models\ExperienceModel;
 use App\Models\ServiceModel;
+use App\Models\SkillModel;
 use Illuminate\Http\Request;
 
 class WelcomeController extends Controller {
@@ -21,7 +22,8 @@ class WelcomeController extends Controller {
     public function resume() {
         $data = array(
             'experience' => ExperienceModel::publicExperienceAll(),
-            'education' => EducationModel::publicEducationAll()
+            'education' => EducationModel::publicEducationAll(),
+            'skill' => SkillModel::publicSkillAll()
         );
         return view('resume', $data);
     }

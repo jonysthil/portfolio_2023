@@ -83,11 +83,13 @@
 <div class="swiper-container js-carousel-clients">
     <div class="swiper-wrapper">
         <!-- Item client -->
+        @foreach ($skill as $sk)
         <figure class="swiper-slide">
-            <img class="img-gray" src="assets/images/clients/logo-1-color.png" alt="Logo" />
+            <img height="131px" class="img-gray" src="{{ asset('uploads/skill/' . $sk->sk_image) }}" alt="{{ $sk->sk_title }}" title="{{ $sk->sk_title }}" />
         </figure>
+        @endforeach
             
-        <!-- Item client -->
+        {{-- <!-- Item client -->
         <figure class="swiper-slide">
             <img class="img-gray" src="assets/images/clients/logo-2-color.png" alt="Logo" />
         </figure>
@@ -110,7 +112,7 @@
         <!-- Item client -->
         <figure class="swiper-slide">
             <img class="img-gray" src="assets/images/clients/logo-6-color.png" alt="Logo" />
-        </figure>
+        </figure> --}}
     </div>
         
     <div class="swiper-pagination"></div>

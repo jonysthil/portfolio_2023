@@ -123,7 +123,7 @@
 						    <ul class="nav">
                                 <li class="nav__item"><a class="{{ request()->is('/') ? 'active' : '' }}" href="{{ route('p.home') }}">About</a></li>
 								<li class="nav__item"><a class="{{ request()->is('resume') ? 'active' : '' }}" href="{{ route('p.resume') }}">Resume</a></li>
-                                <li class="nav__item"><a class="{{ request()->is('portfolio/*') ? 'active' : '' }}" href="{{ route('p.portfolio') }}">Portfolio</a></li>
+                                <li class="nav__item"><a class="{{ request()->is('portfolio*') ? 'active' : '' }}" href="{{ route('p.portfolio') }}">Portfolio</a></li>
                                 {{-- <li class="nav__item"><a href="blog.html">Blog</a></li> --}}
                                 <li class="nav__item"><a class="{{ request()->is('contact') ? 'active' : '' }}" href="{{ route('p.contact') }}">Contact</a></li>
                             </ul>

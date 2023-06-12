@@ -6,6 +6,7 @@ use App\Http\Controllers\ExperienceController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\ServiceController;
+use App\Http\Controllers\SkillController;
 use App\Http\Controllers\WelcomeController;
 use Illuminate\Support\Facades\Route;
 
@@ -65,6 +66,12 @@ Route::group(['prefix' => 'admin'], function() {
         Route::delete('/education/{edu_id}/delete', [EducationController::class, 'deleteEducation'])->name('education.delete');
         Route::get('/education/{edu_id}/status', [EducationController::class,'statusEducation'])->name('education.status');
         Route::get('/education/order', [EducationController::class,'orderEducation'])->name('education.order');
+
+        Route::get('/skill', [SkillController::class, 'list'])->name('skills');
+        Route::post('/skill/save', [SkillController::class,'saveSkill'])->name('skill.save');
+        Route::delete('/skill/{sk_id}/delete', [SkillController::class, 'deleteSkill'])->name('skill.delete');
+        Route::get('/skill/{sk_id}/status', [SkillController::class,'statusSkill'])->name('skill.status');
+        Route::get('/skill/order', [SkillController::class,'orderSkill'])->name('skill.order');
     
     });
 
