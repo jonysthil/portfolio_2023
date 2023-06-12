@@ -240,29 +240,52 @@
                         <i class="la la-info"></i>
                         <span class="menu-title">Resume</span>
                     </a>
-                        <ul class="menu-content">
-                            <li class=" nav-item {{ request()->is('admin/experience*') ? 'active' : '' }}">
-                                <a href="{{ route('experiences') }}">
-                                    <i class="la la-industry"></i>
-                                    <span class="menu-title">Work Experience</span>
-                                </a>
-                            </li>
-            
-                            <li class=" nav-item {{ request()->is('admin/education*') ? 'active' : '' }}">
-                                <a href="{{ route('educations') }}">
-                                    <i class="la la-graduation-cap"></i>
-                                    <span class="menu-title">Education</span>
-                                </a>
-                            </li>
+                    <ul class="menu-content">
+                        <li class=" nav-item {{ request()->is('admin/experience*') ? 'active' : '' }}">
+                            <a href="{{ route('experiences') }}">
+                                <i class="la la-industry"></i>
+                                <span class="menu-title">Work Experience</span>
+                            </a>
+                        </li>
+        
+                        <li class=" nav-item {{ request()->is('admin/education*') ? 'active' : '' }}">
+                            <a href="{{ route('educations') }}">
+                                <i class="la la-graduation-cap"></i>
+                                <span class="menu-title">Education</span>
+                            </a>
+                        </li>
 
-                            <li class=" nav-item {{ request()->is('admin/skill*') ? 'active' : '' }}">
-                                <a href="{{ route('skills') }}">
-                                    <i class="la la-paw"></i>
-                                    <span class="menu-title">Skills</span>
-                                </a>
-                            </li>
-                        </ul>
-                    </li>
+                        <li class=" nav-item {{ request()->is('admin/skill*') ? 'active' : '' }}">
+                            <a href="{{ route('skills') }}">
+                                <i class="la la-paw"></i>
+                                <span class="menu-title">Skills</span>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+
+                <li class=" nav-item">
+                    <a href="#">
+                        <i class="la la-briefcase"></i>
+                        <span class="menu-title">Portfolio</span>
+                    </a>
+                    <ul class="menu-content">
+                        <li class=" nav-item {{ request()->is('admin/experience*') ? 'active' : '' }}">
+                            <a href="{{ route('experiences') }}">
+                                <i class="la la-server"></i>
+                                <span class="menu-title">Proyects</span>
+                            </a>
+                        </li>
+        
+                        <li class=" nav-item {{ request()->is('admin/categorie*') ? 'active' : '' }}">
+                            <a href="{{ route('categories') }}">
+                                <i class="la la-list-ul"></i>
+                                <span class="menu-title">Categories</span>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+
             </ul>
         </div>
     </div>

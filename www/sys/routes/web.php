@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AboutController;
+use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\EducationController;
 use App\Http\Controllers\ExperienceController;
 use App\Http\Controllers\HomeController;
@@ -72,6 +73,10 @@ Route::group(['prefix' => 'admin'], function() {
         Route::delete('/skill/{sk_id}/delete', [SkillController::class, 'deleteSkill'])->name('skill.delete');
         Route::get('/skill/{sk_id}/status', [SkillController::class,'statusSkill'])->name('skill.status');
         Route::get('/skill/order', [SkillController::class,'orderSkill'])->name('skill.order');
+
+        Route::get('/categories', [CategoryController::class, 'list'])->name('categories');
+        Route::post('/categories/save', [CategoryController::class,'saveCategory'])->name('category.save');
+        Route::delete('/categories/{pc_id}/delete', [CategoryController::class, 'deleteCategory'])->name('category.delete');
     
     });
 
