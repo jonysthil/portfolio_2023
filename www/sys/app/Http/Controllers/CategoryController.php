@@ -20,7 +20,7 @@ class CategoryController extends Controller {
 
     public function saveCategory(Request $request) {
         $validator = Validator::make($request->all(), [
-            'pc_name' => 'required|unique:portfolio_category',
+            'pc_name' => 'required|unique:proyect_category',
         ],[
             'pc_name.required' => 'Please complete this field',
             'pc_name.unique' => 'The category already exists',

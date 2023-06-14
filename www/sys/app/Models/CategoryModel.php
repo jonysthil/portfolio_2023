@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class CategoryModel extends Model {
 
-	protected $table      = 'portfolio_category';
+	protected $table      = 'proyect_category';
 	protected $primaryKey = 'pc_id';
 	//protected $fillable   = [];
 	public $timestamps    = false;
