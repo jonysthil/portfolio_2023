@@ -270,8 +270,8 @@
                         <span class="menu-title">Portfolio</span>
                     </a>
                     <ul class="menu-content">
-                        <li class=" nav-item {{ request()->is('admin/experience*') ? 'active' : '' }}">
-                            <a href="{{ route('experiences') }}">
+                        <li class=" nav-item {{ request()->is('admin/portfolio*') ? 'active' : '' }}">
+                            <a href="{{ route('portfolio') }}">
                                 <i class="la la-server"></i>
                                 <span class="menu-title">Proyects</span>
                             </a>

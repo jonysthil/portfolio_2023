@@ -81,7 +81,7 @@ class EducationController extends Controller {
             'edu_place' => 'required',
             'edu_title' => 'required'
         ],[
-            'edu_title.place' => 'Please complete this field',
+            'edu_place.required' => 'Please complete this field',
             'edu_title.required' => 'Please complete this field'
         ]);
 

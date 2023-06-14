@@ -6,6 +6,7 @@ use App\Http\Controllers\EducationController;
 use App\Http\Controllers\ExperienceController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\PortfolioController;
 use App\Http\Controllers\ServiceController;
 use App\Http\Controllers\SkillController;
 use App\Http\Controllers\WelcomeController;
@@ -77,7 +78,17 @@ Route::group(['prefix' => 'admin'], function() {
         Route::get('/categories', [CategoryController::class, 'list'])->name('categories');
         Route::post('/categories/save', [CategoryController::class,'saveCategory'])->name('category.save');
         Route::delete('/categories/{pc_id}/delete', [CategoryController::class, 'deleteCategory'])->name('category.delete');
-    
+
+        Route::get('/portfolio', [PortfolioController::class, 'list'])->name('portfolio');
+        Route::get('/portfolio/new', [PortfolioController::class, 'newPortfolio'])->name('portfolio.new');
+        Route::post('/portfolio/save', [PortfolioController::class, 'savePortfolio'])->name('portfolio.save');
+        Route::get('/portfolio/{prt_id}/detail', [PortfolioController::class, 'detailPortfolio'])->name('portfolio.detail');
+        Route::get('/portfolio/{prt_id}/edit', [PortfolioController::class, 'editPortfolio'])->name('portfolio.edit');
+        Route::put('/portfolio/{prt_id}/update', [PortfolioController::class, 'updatePortfolio'])->name('portfolio.update');
+        Route::delete('/portfolio/{prt_id}/delete', [PortfolioController::class, 'deletePortfolio'])->name('portfolio.delete');
+        Route::get('/portfolio/{prt_id}/status', [PortfolioController::class,'statusPortfolio'])->name('portfolio.status');
+        Route::get('/portfolio/order', [PortfolioController::class,'orderPortfolio'])->name('portfolio.order');
+
     });
 
 });
