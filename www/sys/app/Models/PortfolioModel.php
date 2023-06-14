@@ -27,7 +27,6 @@ class PortfolioModel extends Model {
 
 	public function scopePortfolioGet($query, $prt_id) {
 		return $query->select('*')
-					->join('proyect_category', 'proyect_category.pc_id', '=', 'portfolio.pc_id')
 					->where('prt_id', $prt_id)
                     ->first();
 	}

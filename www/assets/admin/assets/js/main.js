@@ -40,6 +40,16 @@ $(document).ready(function() {
         }
     });
 
-    
+    $(".select_category").change(function () {
+        var data = $(this).prop("checked");
+        var value = $(this).val();
+        var data_url = $(this).data("url");
+
+        $.get(data_url, {data : data, value : value}, function(response){
+            console.log(response);
+            toastr.success('The categories were modified', 'Modifying data', { "closeButton": true });
+        });
+
+    });
 
 });

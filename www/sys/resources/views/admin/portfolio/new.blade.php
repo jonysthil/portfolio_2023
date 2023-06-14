@@ -20,16 +20,6 @@
                                 <div class="row">
                                     <div class="col-md-4">
                                         <div class="form-group">
-                                            <label for="pc_id">Category</label>
-                                            <select class="form-control" name="pc_id" id="pc_id">
-                                                @foreach ($categories as $pc)
-                                                <option value="{{ $pc->pc_id }}" {{ (old('pc_id') == $pc->pc_id) ? 'selected' : '' }}>{{ $pc->pc_name }}</option>
-                                                @endforeach
-                                            </select>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-4">
-                                        <div class="form-group">
                                             <label for="prt_title">Title<span class="text-danger">*</span></label>
                                             <input type="text" value="{{ old('prt_title') }}" name="prt_title" id="prt_title" class="form-control @error('prt_title') is-invalid @enderror">
                                             @error('prt_title') <span class="text-danger">{!! $message !!}</span> @enderror

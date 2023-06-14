@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\CategoryModel;
+use App\Models\PortfolioCategoryModel;
 use App\Models\PortfolioModel;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
@@ -21,12 +22,7 @@ class PortfolioController extends Controller {
     }
 
     public function newPortfolio() {
-
-        $data = array(
-            'categories' => CategoryModel::categoryGet()
-        );
-
-        return view('admin/portfolio/new', $data);
+        return view('admin/portfolio/new');
     }
 
     public function savePortfolio(Request $request) {
@@ -47,7 +43,6 @@ class PortfolioController extends Controller {
         }
 
         $data = array(
-            'pc_id' => $request->get('pc_id'),
             'prt_title' => $request->get('prt_title'),
             'prt_description' => $request->get('prt_description'),
             'prt_date' => $request->get('prt_date'),
@@ -60,8 +55,21 @@ class PortfolioController extends Controller {
     }
 
     public function detailPortfolio($prt_id) {
+
+        $categories = PortfolioCategoryModel::ProyectCategoryGet($prt_id);
+
+        //Obtener array de datos para seleccionarlos en el combobox
+        $category_select = array(); 
+        $i = 0;
+        foreach ($categories as $rel) {
+            $category_select[$i] = $rel['pc_id'];
+            $i++;
+        }
+
         $data = array(
-            'proyect' => PortfolioModel::portfolioGet($prt_id)
+            'proyect' => PortfolioModel::portfolioGet($prt_id),
+            'categories' => CategoryModel::categoryGet(),
+            'category_select' => $category_select
         );
         return view('admin/portfolio/detail', $data);
     }
@@ -70,7 +78,6 @@ class PortfolioController extends Controller {
 
         $data = array(
             'proyect' => PortfolioModel::portfolioGet($prt_id),
-            'categories' => CategoryModel::categoryGet()
         );
 
         return view('admin/portfolio/edit', $data);
@@ -94,7 +101,6 @@ class PortfolioController extends Controller {
         }
 
         $data = array(
-            'pc_id' => $request->get('pc_id'),
             'prt_title' => $request->get('prt_title'),
             'prt_description' => $request->get('prt_description'),
             'prt_date' => $request->get('prt_date'),
@@ -109,6 +115,23 @@ class PortfolioController extends Controller {
     public function deletePortfolio($prt_id) {
         PortfolioModel::portfolioDelete($prt_id);
         return redirect()->route('portfolio')->with('error', 'Deleted information');
+    }
+
+    public function categoryPortfolio(Request $request, $prt_id) {
+
+        $data = array(
+            'prt_id' => $prt_id,
+            'pc_id' => $request->get('value')
+        );
+
+        if($request->get('data') == "true") {
+            //insert relation
+            PortfolioCategoryModel::proyectCategorySave($data);
+        } else {
+            //delete relation
+            PortfolioCategoryModel::proyectCategoryDelete($data);
+        }
+
     }
 
     public function statusPortfolio(Request $request, $prt_id) {

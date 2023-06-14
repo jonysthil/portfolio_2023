@@ -87,7 +87,8 @@ Route::group(['prefix' => 'admin'], function() {
         Route::get('/portfolio/{prt_id}/edit', [PortfolioController::class, 'editPortfolio'])->name('portfolio.edit');
         Route::put('/portfolio/{prt_id}/update', [PortfolioController::class, 'updatePortfolio'])->name('portfolio.update');
         Route::delete('/portfolio/{prt_id}/delete', [PortfolioController::class, 'deletePortfolio'])->name('portfolio.delete');
-        Route::get('/portfolio/{prt_id}/status', [PortfolioController::class,'statusPortfolio'])->name('portfolio.status');
+        Route::get('/portfolio/{prt_id}/category', [PortfolioController::class,'statusPortfolio'])->name('portfolio.status');
+        Route::get('/portfolio/{prt_id}/status', [PortfolioController::class,'categoryPortfolio'])->name('portfolio.category');
         Route::get('/portfolio/order', [PortfolioController::class,'orderPortfolio'])->name('portfolio.order');
 
     });

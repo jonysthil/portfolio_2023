@@ -5,7 +5,7 @@
 @section('container')
 
 <div class="row">
-    <div class="col-md-12 col-sm-12">
+    <div class="col-md-8 col-sm-12">
         <div class="card">
             <div class="card-header">
                 <div class="row">
@@ -34,7 +34,7 @@
                 <div class="card-body">
 
                     <div class="row">
-                        <div class="col-md-6">
+                        <div class="col-md-12">
                             
                             <p>
                                 <div class="custom-control-inline custom-switch">
@@ -43,13 +43,10 @@
                                 </div>
                             </p>
                             <p><b>Title:</b> {{ $proyect->prt_title }}</p>
-                            <p><b>Category:</b> {{ $proyect->pc_name }}</p>
                             <p><b>Date of delivery:</b> {{ $proyect->prt_date->format('d F, Y') }}</p>
-
-                        </div>
-                        <div class="col-md-6">
                             <p><b>Description:</b></p>
                             {!! $proyect->prt_description !!}
+
                         </div>
                     </div>
 
@@ -59,6 +56,43 @@
             </div>
         </div>
     </div>
+
+    <div class="col-md-4 col-sm-12">
+        <div class="card">
+            <div class="card-header">
+                <h4 class="card-title">Categories</h4>
+            </div>
+            <div class="card-content">
+                <div class="card-body">
+
+                    <div class="row">
+                        <div class="col-md-12">
+
+                            <div class="row">
+                                @foreach ($categories as $cat)
+
+                                <div class="col-md-6">
+                                    @if (in_array($cat->pc_id, $category_select))
+                                    <input class="select_category" data-url="{{ route('portfolio.category', $proyect->prt_id) }}" type="checkbox" name="pc_id[]" id="pc_id[]" value="{{ $cat->pc_id }}" checked>
+                                    @else
+                                    <input class="select_category" data-url="{{ route('portfolio.category', $proyect->prt_id) }}" type="checkbox" name="pc_id[]" id="pc_id[]" value="{{ $cat->pc_id }}">
+                                    @endif
+                                    <label for=""><small>{{ $cat->pc_name }}</small></label>
+                                </div>
+                                    
+                                @endforeach
+                            </div>
+
+                        </div>
+                    </div>
+
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+
 </div>
 
 @endsection
