@@ -34,7 +34,8 @@ class EducationController extends Controller {
         ]);
 
         if ($validator->fails()) {
-            return redirect('/admin/education/new')
+            return redirect()
+                        ->route('education.new')
                         ->withErrors($validator)
                         ->withInput();
         }
@@ -86,7 +87,8 @@ class EducationController extends Controller {
         ]);
 
         if ($validator->fails()) {
-            return redirect('/admin/education/'.$edu_id.'/edit')
+            return redirect()
+                        ->route('education.edit', $edu_id)
                         ->withErrors($validator)
                         ->withInput();
         }

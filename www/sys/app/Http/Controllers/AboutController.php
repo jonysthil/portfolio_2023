@@ -26,7 +26,8 @@ class AboutController extends Controller {
         ]);
 
         if ($validator->fails()) {
-            return redirect('/admin/about')
+            return redirect()
+                        ->route('about')
                         ->withErrors($validator)
                         ->withInput();
         }
@@ -36,8 +37,7 @@ class AboutController extends Controller {
         );
 
         AboutModel::aboutSave($data);
-
-        return redirect('/admin/about/')->with('success', 'Se actualizó la información con éxito.');
+        return redirect()->route('about')->with('success', 'Modified record.');
 
     }
 

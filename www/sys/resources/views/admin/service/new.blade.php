@@ -17,12 +17,12 @@
                         @csrf
                         <div class="form-group">
                             <label for="ser_name">Name<span class="text-danger">*</span></label>
-                            <input type="text" id="ser_name" name="ser_name" class="form-control @error('ser_name') is-invalid @enderror">
+                            <input type="text" id="ser_name" name="ser_name" class="form-control @error('ser_name') is-invalid @enderror" value="{{ old('ser_name') }}">
                             @error('ser_name') <span class="text-danger">{!! $message !!}</span> @enderror
                         </div>
                         <div class="form-group">
                             <label for="ser_description">Description<span class="text-danger">*</span></label>
-                            <textarea id="ser_description" rows="5" class="form-control @error('ser_description') is-invalid @enderror" name="ser_description"></textarea>
+                            <textarea id="ser_description" rows="5" class="form-control @error('ser_description') is-invalid @enderror" name="ser_description">{{ old('ser_description') }}</textarea>
                             @error('ser_description') <span class="text-danger">{!! $message !!}</span> @enderror
                         </div>
                         <div class="row">

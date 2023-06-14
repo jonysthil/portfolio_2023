@@ -27,7 +27,8 @@ class CategoryController extends Controller {
         ]);
 
         if ($validator->fails()) {
-            return redirect('/admin/categories')
+            return redirect()
+                        ->route('categories')
                         ->withErrors($validator)
                         ->withInput();
         }

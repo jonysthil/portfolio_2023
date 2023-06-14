@@ -65,14 +65,14 @@
                                         <form class="form-horizontal" action="{{ route('validateLogin') }}" method="POST">
                                             @csrf
                                             <fieldset class="form-group position-relative has-icon-left">
-                                                <input type="email" class="form-control @error('email') is-invalid @enderror" id="email" name="email" placeholder="Your Username">
+                                                <input type="email" class="form-control @error('email') is-invalid @enderror" id="email" name="email" placeholder="Your Username" value="{{ old('email') }}">
                                                 <div class="form-control-position">
                                                     <i class="la la-user"></i>
                                                 </div>
                                                 @error('email') <span class="text-danger">{!! $message !!}</span> @enderror
                                             </fieldset>
                                             <fieldset class="form-group position-relative has-icon-left">
-                                                <input type="password" class="form-control @error('pass') is-invalid @enderror" id="pass" name="pass" placeholder="Enter Password">
+                                                <input type="password" class="form-control @error('pass') is-invalid @enderror" id="pass" name="pass" placeholder="Enter Password" value="{{ old('pass') }}">
                                                 <div class="form-control-position">
                                                     <i class="la la-key"></i>
                                                 </div>

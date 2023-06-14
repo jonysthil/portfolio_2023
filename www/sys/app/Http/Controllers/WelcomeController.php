@@ -7,7 +7,6 @@ use App\Models\EducationModel;
 use App\Models\ExperienceModel;
 use App\Models\ServiceModel;
 use App\Models\SkillModel;
-use Illuminate\Http\Request;
 
 class WelcomeController extends Controller {
     

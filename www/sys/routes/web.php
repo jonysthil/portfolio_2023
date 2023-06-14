@@ -26,13 +26,14 @@ use Illuminate\Support\Facades\Route;
 Route::group(['prefix' => 'admin'], function() {
 
     // Login del panel de administración.
-    Route::get('/', [LoginController::class, 'loginForm']);
-    Route::get ('/login', [LoginController::class, 'loginForm']);
+    Route::get('/', [LoginController::class, 'loginForm'])->name('login');
+    Route::get ('/login', [LoginController::class, 'loginForm'])->name('login');
     Route::post('/login', [LoginController::class, 'validar'])->name('validateLogin');
     Route::get ('/logout', [LoginController::class, 'logout'])->name('logout');
 
 
     Route::group(['middleware' => ['authenticateMiddleware']], function () {
+
         Route::get('/dashboard', [HomeController::class, 'dashboard'])->name('home');
 
         Route::get('/about', [AboutController::class, 'detail'])->name('about');

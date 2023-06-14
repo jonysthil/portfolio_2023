@@ -36,7 +36,8 @@ class ExperienceController extends Controller {
         ]);
 
         if ($validator->fails()) {
-            return redirect('/admin/experience/new')
+            return redirect()
+                        ->route('experience.new')
                         ->withErrors($validator)
                         ->withInput();
         }
@@ -90,7 +91,8 @@ class ExperienceController extends Controller {
         ]);
 
         if ($validator->fails()) {
-            return redirect('/admin/experience/'.$exp_id.'/edit')
+            return redirect()
+                        ->route('experience.edit', $exp_id)
                         ->withErrors($validator)
                         ->withInput();
         }

@@ -36,7 +36,8 @@ class LoginController extends Controller {
         ]);
 
         if ($validator->fails()) {
-            return redirect('/admin/login')
+            return redirect()
+                        ->route('login')
                         ->withErrors($validator)
                         ->withInput();
         }

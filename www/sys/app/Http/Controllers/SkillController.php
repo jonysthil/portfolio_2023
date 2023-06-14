@@ -32,7 +32,8 @@ class SkillController extends Controller {
         ]);
 
         if ($validator->fails()) {
-            return redirect('/admin/skill/')
+            return redirect()
+                        ->route('skills')
                         ->withErrors($validator)
                         ->withInput();
         }

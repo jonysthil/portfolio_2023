@@ -40,7 +40,8 @@ class ServiceController extends Controller {
         ]);
 
         if ($validator->fails()) {
-            return redirect('/admin/service/new')
+            return redirect()
+                        ->route('service.new')
                         ->withErrors($validator)
                         ->withInput();
         }
@@ -87,7 +88,8 @@ class ServiceController extends Controller {
         ]);
 
         if ($validator->fails()) {
-            return redirect('/admin/service/'.$ser_id.'/edit')
+            return redirect()
+                        ->route('service.edit', $ser_id)
                         ->withErrors($validator)
                         ->withInput();
         }
@@ -149,7 +151,8 @@ class ServiceController extends Controller {
         ]);
 
         if ($validator->fails()) {
-            return redirect('/admin/service/'.$ser_id.'/detail')
+            return redirect()
+                        ->route('service.detail', $ser_id)
                         ->withErrors($validator)
                         ->withInput();
         }
