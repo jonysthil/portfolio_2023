@@ -47,5 +47,17 @@ class PortfolioModel extends Model {
                     ->update(array('prt_order' => $prt_order));
     }
 
+	public function scopePublicPortfolioAll($query) {
+		return $query->select('*')
+					->where('prt_status', 1)
+					->orderBy('prt_order', 'asc')
+                    ->get();
+	}
+
+	public function scopePublicPortfolioGet($query, $prt_slug) {
+		return $query->select('*')
+					->where('prt_slug', $prt_slug)
+                    ->first();
+	}
 	
 }

@@ -1,5 +1,6 @@
 <?php
 //clase para funciones que pueden ayudar
+use App\Models\PortfolioCategoryModel;
 class Tools {
 
     public static function exist_image($folder, $nombre) {
@@ -50,6 +51,31 @@ class Tools {
         );
         return $month[$m];
     }
+
+    public static function yourCategoriesId($prt_id) {
+        $categories = PortfolioCategoryModel::publicProyectCategoryGet($prt_id);
+
+        $result = '';
+
+        foreach($categories as $cat) {
+            $result .= $cat->pc_id . " ";
+        }
+
+        return $result;
+    }
+
+    public static function yourCategoriesName($prt_id) {
+        $categories = PortfolioCategoryModel::publicProyectCategoryGet($prt_id);
+
+        $result = '';
+
+        foreach($categories as $cat) {
+            $result .= $cat->pc_name . ", ";
+        }
+
+        return substr($result,0,-2);
+    }
+
 
 }
 

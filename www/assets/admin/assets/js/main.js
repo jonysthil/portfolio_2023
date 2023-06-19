@@ -52,4 +52,27 @@ $(document).ready(function() {
 
     });
 
+    $(".isHeadElement").click(function () {
+        var data_id = $(this).data('id');
+        var data_proy = $(this).data('proy');
+        var data_head = $(this).data('head');
+        var data_url = $(this).data("url");
+
+        $.get(data_url, { 
+            data_id : data_id, 
+            data_head : data_head,
+            data_proy : data_proy
+        }, function (response) {
+            //console.log(response);
+            for(var i=1; i<=response; i++) {
+                $('#select-head-'+i).load(' #select-head-'+i);
+                console.log('#select-head-'+i);
+            }
+            toastr.success('The status changed successfully', 'Modifying data', { "closeButton": true });
+            //window.location.reload(true);
+            //window.location.replace(window.location.href + '#sec_gallery');
+            //window.location.href='#sec_gallery'
+        });
+    });
+
 });

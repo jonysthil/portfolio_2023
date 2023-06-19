@@ -5,6 +5,7 @@
 @section('container')
 
 <div class="row">
+    
     <div class="col-md-8 col-sm-12">
         <div class="card">
             <div class="card-header">
@@ -73,11 +74,11 @@
 
                                 <div class="col-md-6">
                                     @if (in_array($cat->pc_id, $category_select))
-                                    <input class="select_category" data-url="{{ route('portfolio.category', $proyect->prt_id) }}" type="checkbox" name="pc_id[]" id="pc_id[]" value="{{ $cat->pc_id }}" checked>
+                                    <input class="select_category" data-url="{{ route('portfolio.category', $proyect->prt_id) }}" type="checkbox" name="pc_id-{{ $cat->pc_id }}" id="pc_id-{{ $cat->pc_id }}" value="{{ $cat->pc_id }}" checked>
                                     @else
-                                    <input class="select_category" data-url="{{ route('portfolio.category', $proyect->prt_id) }}" type="checkbox" name="pc_id[]" id="pc_id[]" value="{{ $cat->pc_id }}">
+                                    <input class="select_category" data-url="{{ route('portfolio.category', $proyect->prt_id) }}" type="checkbox" name="pc_id-{{ $cat->pc_id }}" id="pc_id-{{ $cat->pc_id }}" value="{{ $cat->pc_id }}">
                                     @endif
-                                    <label for=""><small>{{ $cat->pc_name }}</small></label>
+                                    <label><small>{{ $cat->pc_name }}</small></label>
                                 </div>
                                     
                                 @endforeach
@@ -93,6 +94,12 @@
         </div>
     </div>
 
+</div>
+
+<div class="row">
+    <div class="col-md-12">
+        @include('admin/portfolio-gallery/list')
+    </div>
 </div>
 
 @endsection

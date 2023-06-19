@@ -28,5 +28,12 @@ class PortfolioCategoryModel extends Model {
 		return $query->where($data)
 					->delete();
 	}
+
+	public function scopePublicProyectCategoryGet($query, $prt_id) {
+		return $query->select('*')
+					->join('proyect_category', 'proyect_category.pc_id', '=', 'portfolio_category.pc_id')
+					->where('prt_id', $prt_id)
+                    ->get();
+	}
 	
 }

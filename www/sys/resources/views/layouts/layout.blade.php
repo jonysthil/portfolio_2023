@@ -19,6 +19,8 @@
     <link rel="stylesheet" type="text/css" href="{{ asset('assets/admin/app-assets/vendors/css/vendors.min.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ asset('assets/admin/app-assets/vendors/css/tables/datatable/datatables.min.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ asset('assets/admin/app-assets/vendors/css/extensions/toastr.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('assets/admin/app-assets/vendors/js/gallery/photo-swipe/photoswipe.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('assets/admin/app-assets/vendors/js/gallery/photo-swipe/default-skin/default-skin.css') }}">
     <!-- END: Vendor CSS-->
 
     <!-- BEGIN: Theme CSS-->
@@ -36,6 +38,7 @@
     <link rel="stylesheet" type="text/css" href="{{ asset('assets/admin/app-assets/fonts/simple-line-icons/style.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ asset('assets/admin/app-assets/css/core/colors/palette-gradient.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ asset('assets/admin/app-assets/css/plugins/extensions/toastr.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('assets/admin/app-assets/css/pages/gallery.css') }}">
     <!-- END: Page CSS-->
 
     <!-- BEGIN: Custom CSS-->
@@ -329,6 +332,9 @@
     <!-- BEGIN Vendor JS-->
     
     <!-- BEGIN: Page Vendor JS-->
+    <script src="{{ asset('assets/admin/app-assets/vendors/js/gallery/masonry/masonry.pkgd.min.js') }}"></script>
+    <script src="{{ asset('assets/admin/app-assets/vendors/js/gallery/photo-swipe/photoswipe.min.js') }}"></script>
+    <script src="{{ asset('assets/admin/app-assets/vendors/js/gallery/photo-swipe/photoswipe-ui-default.min.js') }}"></script>
     <script src="{{ asset('assets/admin/app-assets/vendors/js/charts/chart.min.js') }}"></script>
     <script src="{{ asset('assets/admin/app-assets/vendors/js/charts/raphael-min.js') }}"></script>
     <script src="{{ asset('assets/admin/app-assets/vendors/js/charts/morris.min.js') }}"></script>
@@ -344,6 +350,7 @@
     <script src="{{ asset('assets/admin/app-assets/js/core/app.js') }}"></script>
     <!-- END: Theme JS-->
     
+    <script src="{{ asset('assets/admin/app-assets/js/scripts/gallery/photo-swipe/photoswipe-script.js') }}"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
     <!-- BEGIN: Page JS-->
     <script src="{{ asset('assets/admin/assets/js/main.js') }}"></script>
@@ -381,7 +388,14 @@
         
         @endphp
     </script>
-
+    
+    @if(Session::has('errors'))
+    <script>
+        $(document).ready(function(){
+            $('.modal-errors').modal({show: true});
+        });
+    </script>
+    @endif
 </body>
 <!-- END: Body-->
 

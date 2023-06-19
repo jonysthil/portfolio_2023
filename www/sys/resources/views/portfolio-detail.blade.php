@@ -1,6 +1,6 @@
 @extends('layouts.main')
 
-@section('title', 'Home')
+@section('title', 'Proyect :: '.$proyect->prt_title)
 
 @section('container')
 <!-- About -->
@@ -12,27 +12,27 @@
 <a class="btn-back" href="{{ route('p.portfolio') }}"><i class="feathericon-arrow-left"></i>Back Portfolio</a>
 
 <header class="header-project">
-    <h1 class="title title--h1">Moonboard – Admin Dashboard & <br>UI Kit + Charts Kit</h1>
+    <h1 class="title title--h1">{{ $proyect->prt_title }}</h1>
     <div class="header-project__image-wrap">
-        <img class="cover lazyload" src="{{ asset('assets/images/958x400.jpg') }}" alt="" />
+        <img class="cover lazyload" src="{{ route('p.portfolio.image.head', $proyect->prt_id) }}" alt="{{ $proyect->prt_title }}" />
     </div>
 </header>
 
 <ul class="details-info details-info--inline">
     <!-- Client -->
-    <li class="details-info__item">
+    {{-- <li class="details-info__item">
         <span class="box icon-box"><i class="font-icon feathericon-user"></i></span>
         <div class="details-info__info">
             <span class="overhead">Client</span>
             ArtTemplate
         </div>
-    </li>
+    </li> --}}
     <!-- Category -->
     <li class="details-info__item">
         <span class="box icon-box"><i class="font-icon feathericon-layers"></i></span>
         <div class="details-info__info">
             <span class="overhead">Category</span>
-            Web Design
+            {{ Tools::yourCategoriesName($proyect->prt_id) }}
         </div>
     </li>
     <!-- Date -->
@@ -40,27 +40,28 @@
         <span class="box icon-box"><i class="font-icon icon-calendar"></i></span>
         <div class="details-info__info">
             <span class="overhead">Date</span>
-            27 June, 2021
+            {{ $proyect->prt_date->format('F, Y') }}
         </div>
     </li>
 </ul>
 
-<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Risus, arcu tortor, feugiat in elit. Hendrerit sit suspendisse eget cras suspendisse aenean. Donec nunc quis sit augue malesuada nullam sit tincidunt. Dictum vel egestas pellentesque ut nunc lorem ut tortor at.</p>
-<p>Scelerisque ipsum pretium augue neque at. Bibendum semper ipsum arcu, nibh blandit facilisi. Quis dictum ornare ultricies porta lectus in metus, purus facilisi. Egestas amet, enim in maecenas ultrices. Ornare donec volutpat enim at eget habitant eleifend. Enim, nisl porttitor egestas etiam a, magna neque.</p>
+{!! $proyect->prt_description !!}
 
 <div class="swiper-container js-carousel-project">
     <div class="swiper-wrapper project-gallery">
         <!-- Item -->
+        @foreach ($gallery as $img)
         <figure class="swiper-slide swiper-slide-project">
-            <a id="first" title="click to zoom-in" href="{{ asset('assets/images/560x340.jpg') }}" data-size="1920x1080">
-                <img class="lazyload" src="{{ asset('assets/images/560x340.jpg') }}" alt="" />
+            <a id="first" title="click to zoom-in" href="{{ route('p.portfolio.images', $img->pg_id) }}" data-size="1920x1080">
+                <img class="lazyload" src="{{ route('p.portfolio.images', $img->pg_id) }}" alt="{{ $img->pg_name }}" />
             </a>
         </figure>
+        @endforeach
                 
-        <!-- Item -->
+        {{-- <!-- Item -->
         <figure class="swiper-slide swiper-slide-project">
-            <a title="click to zoom-in" href="{{ asset('assets/images/560x340.jpg') }}" data-size="1920x1080">
-                <img class="lazyload" src="{{ asset('assets/images/560x340.jpg') }}" alt="" />
+            <a title="click to zoom-in" href="{{ asset('assets/images/bg1.jpg') }}" data-size="1920x1080">
+                <img class="lazyload" src="{{ asset('assets/images/bg1.jpg') }}" alt="" />
             </a>
         </figure>
 
@@ -73,10 +74,10 @@
 
         <!-- Item -->
         <figure class="swiper-slide swiper-slide-project">
-            <a title="click to zoom-in" href="{{ asset('assets/images/560x340.jpg') }}" data-size="1920x1080">
-                <img class="lazyload" src="{{ asset('assets/images/560x340.jpg') }}" alt="" />
+            <a title="click to zoom-in" href="{{ asset('assets/images/bg1.png') }}" data-size="1920x1080">
+                <img class="lazyload" src="{{ asset('assets/images/bg1.png') }}" alt="" />
             </a>
-        </figure>
+        </figure> --}}
     </div>
     <div class="swiper-pagination"></div>
 </div>

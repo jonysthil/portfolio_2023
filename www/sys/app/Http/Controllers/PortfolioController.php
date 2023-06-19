@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\CategoryModel;
 use App\Models\PortfolioCategoryModel;
+use App\Models\PortfolioGalleryModel;
 use App\Models\PortfolioModel;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
@@ -69,7 +70,8 @@ class PortfolioController extends Controller {
         $data = array(
             'proyect' => PortfolioModel::portfolioGet($prt_id),
             'categories' => CategoryModel::categoryGet(),
-            'category_select' => $category_select
+            'category_select' => $category_select,
+            'gallery' => PortfolioGalleryModel::portfolioGalleryAll($prt_id)
         );
         return view('admin/portfolio/detail', $data);
     }

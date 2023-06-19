@@ -7,6 +7,7 @@ use App\Http\Controllers\ExperienceController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\PortfolioController;
+use App\Http\Controllers\PortfolioGalleryController;
 use App\Http\Controllers\ServiceController;
 use App\Http\Controllers\SkillController;
 use App\Http\Controllers\WelcomeController;
@@ -87,9 +88,14 @@ Route::group(['prefix' => 'admin'], function() {
         Route::get('/portfolio/{prt_id}/edit', [PortfolioController::class, 'editPortfolio'])->name('portfolio.edit');
         Route::put('/portfolio/{prt_id}/update', [PortfolioController::class, 'updatePortfolio'])->name('portfolio.update');
         Route::delete('/portfolio/{prt_id}/delete', [PortfolioController::class, 'deletePortfolio'])->name('portfolio.delete');
-        Route::get('/portfolio/{prt_id}/category', [PortfolioController::class,'statusPortfolio'])->name('portfolio.status');
-        Route::get('/portfolio/{prt_id}/status', [PortfolioController::class,'categoryPortfolio'])->name('portfolio.category');
+        Route::get('/portfolio/{prt_id}/status', [PortfolioController::class,'statusPortfolio'])->name('portfolio.status');
+        Route::get('/portfolio/{prt_id}/category', [PortfolioController::class,'categoryPortfolio'])->name('portfolio.category');
         Route::get('/portfolio/order', [PortfolioController::class,'orderPortfolio'])->name('portfolio.order');
+
+        Route::post('portfolio/{prt_id}/gallery/new',[PortfolioGalleryController::class, 'savePortfolioGallery'])->name('portfolio.gallery.new');
+        Route::get('/portfolio/gallery/order', [PortfolioGalleryController::class,'orderPortfolioGallery'])->name('portfolio.gallery.order');
+        Route::delete('/portfolio/{prt_id}/gallery/{pg_id}/delete', [PortfolioGalleryController::class, 'deletePortfolioGallery'])->name('portfolio.gallery.delete');
+        Route::get('/portfolio/gallery/head', [PortfolioGalleryController::class,'headPortfolioGallery'])->name('portfolio.gallery.head');
 
     });
 
@@ -98,7 +104,10 @@ Route::group(['prefix' => 'admin'], function() {
 Route::get('/', [WelcomeController::class, 'home'])->name('p.home');
 Route::get('/resume', [WelcomeController::class, 'resume'])->name('p.resume');
 Route::get('/portfolio', [WelcomeController::class, 'portfolio'])->name('p.portfolio');
-Route::get('/portfolio/detail', [WelcomeController::class, 'portfolioDetail'])->name('p.portfolio.detail');
+Route::get('/portfolio/{prt_slug}', [WelcomeController::class, 'portfolioDetail'])->name('p.portfolio.detail');
 Route::get('/contact', [WelcomeController::class, 'contact'])->name('p.contact');
+
+Route::get('/portfolio/images/{prt_id}', [WelcomeController::class, 'imagesPortfolio'])->name('p.portfolio.images');
+Route::get('/portfolio/image/{prt_id}', [WelcomeController::class, 'imagePortfolioHead'])->name('p.portfolio.image.head');
 
 
