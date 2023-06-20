@@ -106,6 +106,7 @@ Route::get('/resume', [WelcomeController::class, 'resume'])->name('p.resume');
 Route::get('/portfolio', [WelcomeController::class, 'portfolio'])->name('p.portfolio');
 Route::get('/portfolio/{prt_slug}', [WelcomeController::class, 'portfolioDetail'])->name('p.portfolio.detail');
 Route::get('/contact', [WelcomeController::class, 'contact'])->name('p.contact');
+Route::post('/contact/message', [WelcomeController::class, 'contactMessage'])->name('p.contact.message');
 
 Route::get('/portfolio/images/{prt_id}', [WelcomeController::class, 'imagesPortfolio'])->name('p.portfolio.images');
 Route::get('/portfolio/image/{prt_id}', [WelcomeController::class, 'imagePortfolioHead'])->name('p.portfolio.image.head');

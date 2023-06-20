@@ -42,8 +42,9 @@
 	<link rel="stylesheet" type="text/css" href="{{ asset('assets/styles/custom.css') }}"/>
 
 	<!-- Mapbox-->
-    <script src='https://api.mapbox.com/mapbox-gl-js/v1.4.1/mapbox-gl.js'></script>
-    <link href='https://api.mapbox.com/mapbox-gl-js/v1.4.1/mapbox-gl.css' rel='stylesheet' />
+	<link rel="stylesheet" href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css">
+    {{-- <script src='https://api.mapbox.com/mapbox-gl-js/v1.4.1/mapbox-gl.js'></script>
+    <link href='https://api.mapbox.com/mapbox-gl-js/v1.4.1/mapbox-gl.css' rel='stylesheet' /> --}}
 	
 </head>
 <body>
@@ -56,13 +57,17 @@
 						<!-- My photo -->
 						<div class="sidebar__base-info">
 					    	<figure class="avatar-box">
-                                <img src="{{ asset('assets/images/my-avatar.png') }}" alt="Jonathan Jimenez">
+                                <img src="{{ asset('assets/images/jony-profile.jpg') }}" alt="Jonathan Jimenez">
 						    </figure>
 
 						    <div class="text-xl-center">
 						        <h3 class="title title--h3 sidebar__name">Jonathan Jimenez</h3>
 							    <div class="badge">Full Stack</div>
+								<div class="badge">
+									<a href="{{ asset('assets/CV-Jonathan-Jimenez-Gamero.pdf') }}" download="CV-Jonathan-Jimenez-Gamero.pdf"><i class="las la-cloud-download-alt"></i> Download CV</a>
+								</div>
 						    </div>
+							
 
 							<button class="btn btn--small btn--icon-right sidebar__btn js-btn-toggle"><span>Show Contacts</span><i class="feathericon-chevron-down"></i></button>
 						</div>
@@ -75,7 +80,7 @@
 							        <span class="box icon-box"><i class="font-icon icon-envelope"></i></span>
 								    <div class="contacts-block__info">
 									    <span class="overhead">Email</span>
-									    <a class="text-overflow" href="mailto:ricardo@example.com" title="ricardo@example.com">ricardo@example.com</a>
+									    <a class="text-overflow" href="mailto:jonysthil@gmail.com" title="jonysthil@gmail.com">jonysthil@gmail.com</a>
 								    </div>
 							    </li>
 							    <!-- Phone -->
@@ -83,7 +88,7 @@
 								    <span class="box icon-box"><i class="font-icon icon-phone"></i></span>
 								    <div class="contacts-block__info">
 									    <span class="overhead">Phone</span>
-							            <span class="text-overflow" title="+1 (070) 123-4567">+1 (070) 123-4567</span>
+							            <span class="text-overflow" title="5538030380">5538030380</span>
 								    </div>	
 							    </li>
 								<!-- Birthday -->
@@ -91,7 +96,7 @@
 								    <span class="box icon-box"><i class="font-icon icon-calendar"></i></span>
 								    <div class="contacts-block__info">
 									    <span class="overhead">Birthday</span>
-							            <span class="text-overflow" title="March 12, 1995">March 12, 1995</span>
+							            <span class="text-overflow" title="July 30, 1993">July 30, 1993</span>
 								    </div>
 							    </li>
 								<!-- Location -->
@@ -99,7 +104,7 @@
 								    <span class="box icon-box"><i class="font-icon icon-location"></i></span>
 								    <div class="contacts-block__info">
 									    <span class="overhead">Location</span>
-									    <span class="text-overflow" title="San-Francisco, USA">San-Francisco, USA</span>
+									    <span class="text-overflow" title="San-Francisco, USA">Ecatepec, México</span>
 								    </div>
 							    </li>
 					        </ul>
@@ -107,9 +112,11 @@
 
 						    <!-- Social -->
 						    <div class="social">
-							    <a class="social__link" href="https://www.facebook.com/"><i class="feathericon-facebook"></i></a>
-							    <a class="social__link" href="https://www.behance.com/"><i class="feathericon-twitter"></i></a>
-						  	    <a class="social__link" href="https://www.linkedin.com/"><i class="feathericon-instagram"></i></a>
+							    {{-- <a class="social__link" href="https://www.facebook.com/"><i class="feathericon-facebook"></i></a> --}}
+							    <a class="social__link" target="_blank" href="https://www.facebook.com/jonysthil"><i class="lab la-facebook-f"></i></a>
+								<a class="social__link" target="_blank" href="https://www.linkedin.com/in/jonathan-jimenez-gamero/"><i class="lab la-linkedin-in"></i></a>
+								<a class="social__link" target="_blank" href="https://github.com/jonysthil"><i class="lab la-github"></i></a>
+						  	    {{-- <a class="social__link" href="https://www.linkedin.com/"><i class="feathericon-instagram"></i></a> --}}
 						    </div>
 						</div>	
 					</div>	
@@ -139,6 +146,12 @@
     </main>
 
     <div class="back-to-top"></div>
+
+	<div class="whats">
+        <a href="https://wa.me/5215538030380?text=I%20need%20more%20information" target="_blank">
+            <img src="{{ asset('assets/images/whatsapp.png') }}">
+        </a>
+    </div>
 	
 	<!-- JavaScripts -->
 	<script src="{{ asset('assets/js/jquery-3.4.1.min.js') }}"></script>
