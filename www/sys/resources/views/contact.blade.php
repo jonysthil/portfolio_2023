@@ -23,19 +23,19 @@
             @csrf
             <div class="row">
                 <div class="form-group col-12 col-md-4">
-                    <input type="text" class="input form-control @error('name_contact') is-invalid @enderror" id="name_contact" name="name_contact" placeholder="Full name">
+                    <input type="text" value="{{ old('name_contact') }}" class="input form-control @error('name_contact') is-invalid @enderror" id="name_contact" name="name_contact" placeholder="Full name">
                     @error('name_contact') <div class="help-block with-errors">{!! $message !!}</div> @enderror
                 </div>
                 <div class="form-group col-12 col-md-4">
-                    <input type="email" class="input form-control @error('email_contact') is-invalid @enderror" id="email_contact" name="email_contact" placeholder="Email address">
+                    <input type="text" value="{{ old('email_contact') }}" class="input form-control @error('email_contact') is-invalid @enderror" id="email_contact" name="email_contact" placeholder="Email address">
                     @error('email_contact') <div class="help-block with-errors">{!! $message !!}</div> @enderror
                 </div>
                 <div class="form-group col-12 col-md-4">
-                    <input type="tel" class="input form-control @error('phone_contact') is-invalid @enderror" id="phone_contact" name="phone_contact" placeholder="Phone">
+                    <input type="tel" value="{{ old('phone_contact') }}" class="input form-control @error('phone_contact') is-invalid @enderror" id="phone_contact" name="phone_contact" placeholder="Phone">
                     @error('phone_contact') <div class="help-block with-errors">{!! $message !!}</div> @enderror
                 </div>
                 <div class="form-group col-12 col-md-12">
-                    <textarea class="textarea form-control @error('message_contact') is-invalid @enderror" id="message_contact" name="message_contact" placeholder="Your Message"  rows="4"></textarea>
+                    <textarea class="textarea form-control @error('message_contact') is-invalid @enderror" id="message_contact" name="message_contact" placeholder="Your Message"  rows="4">{{ old('message_contact') }}</textarea>
                     @error('message_contact') <div class="help-block with-errors">{!! $message !!}</div> @enderror
                 </div>
             </div>

@@ -289,6 +289,13 @@
                     </ul>
                 </li>
 
+                <li class=" nav-item {{ request()->is('admin/contact*') ? 'active' : '' }}">
+                    <a href="{{ route('contact') }}">
+                        <i class="la la-stack-exchange"></i>
+                        <span class="menu-title">Contact</span>
+                    </a>
+                </li>
+
             </ul>
         </div>
     </div>

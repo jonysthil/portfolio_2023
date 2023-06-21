@@ -69,13 +69,15 @@ class WelcomeController extends Controller {
 
         $validator = Validator::make($request->all(), [
             'name_contact' => 'required',
-            'email_contact' => 'required',
-            'phone_contact' => 'required',
+            'email_contact' => 'required|email',
+            'phone_contact' => 'required|numeric',
             'message_contact' => 'required'
         ],[
             'name_contact.required' => 'Please complete this field',
             'email_contact.required' => 'Please complete this field',
+            'email_contact.email' => 'It is not a valid email',
             'phone_contact.required' => 'Please complete this field',
+            'phone_contact.numeric' => 'Please only numbers',
             'message_contact.required' => 'Please complete this field'
         ]);
 
@@ -90,7 +92,8 @@ class WelcomeController extends Controller {
             'cnt_name' => $request->get('name_contact'),
             'cnt_mail' => $request->get('email_contact'),
             'cnt_phone' => $request->get('phone_contact'),
-            'cnt_message' => $request->get('message_contact')
+            'cnt_message' => $request->get('message_contact'),
+            'cnt_date' => date('Y-m-d')
         );
 
         ContactModel::contactSave($data);

@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AboutController;
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\ContactController;
 use App\Http\Controllers\EducationController;
 use App\Http\Controllers\ExperienceController;
 use App\Http\Controllers\HomeController;
@@ -96,6 +97,9 @@ Route::group(['prefix' => 'admin'], function() {
         Route::get('/portfolio/gallery/order', [PortfolioGalleryController::class,'orderPortfolioGallery'])->name('portfolio.gallery.order');
         Route::delete('/portfolio/{prt_id}/gallery/{pg_id}/delete', [PortfolioGalleryController::class, 'deletePortfolioGallery'])->name('portfolio.gallery.delete');
         Route::get('/portfolio/gallery/head', [PortfolioGalleryController::class,'headPortfolioGallery'])->name('portfolio.gallery.head');
+
+        Route::get('/contact', [ContactController::class, 'list'])->name('contact');
+        Route::get('/contact/{cnt_id}/detail', [ContactController::class, 'detailContact'])->name('contact.detail');
 
     });
 
