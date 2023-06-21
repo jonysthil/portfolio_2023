@@ -6,26 +6,28 @@
     <meta charset="utf-8" />
     <title>@yield('title', 'Jonathan Jimenez')</title>
 
+	<meta name="google-site-verification" content="VwviPaKCWmq2MVC10QT85mRz6Q3qYtQSYeHKe_Hz-PM" />
+
 	<!-- Meta Data -->
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-	<meta name="format-detection" content="telephone=no"/>
-    <meta name="format-detection" content="address=no"/>
-    <meta name="author" content="ArtTemplate" />
+	<meta name="format-detection" content="telephone=5538030380"/>
+    <meta name="format-detection" content="address=Mex, Ecatepec"/>
+    <meta name="author" content="jonysthil :: Jonathan Jimenez" />
     <meta name="description" content="vCard" />
 
     <!-- Twitter data -->
-    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:card" content="Jonathan Jimenez Gamero">
     <meta name="twitter:site" content="@ArtTemplates">
     <meta name="twitter:title" content="vCard">
     <meta name="twitter:description" content="vCard">
-    <meta name="twitter:image" content="assets/images/social.jpg">
+    <meta name="twitter:image" content="{{ asset('assets/images/jony-profile.jpg') }}">
 
     <!-- Open Graph data -->
-    <meta property="og:title" content="ArtTemplate" />
+    <meta property="og:title" content="Jonathan Jimenez Gamero" />
     <meta property="og:type" content="website" />
-    <meta property="og:url" content="your url website" />
-    <meta property="og:image" content="{{ asset('assets/images/social.jpg') }}" />
+    <meta property="og:url" content="jonyjg.com" />
+    <meta property="og:image" content="{{ asset('assets/images/jony-profile.jpg') }}" />
     <meta property="og:description" content="vCard" />
     <meta property="og:site_name" content="vCard" />
 
@@ -45,6 +47,16 @@
 	<link rel="stylesheet" href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css">
     {{-- <script src='https://api.mapbox.com/mapbox-gl-js/v1.4.1/mapbox-gl.js'></script>
     <link href='https://api.mapbox.com/mapbox-gl-js/v1.4.1/mapbox-gl.css' rel='stylesheet' /> --}}
+
+	<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-JP279D9EDX"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-JP279D9EDX');
+</script>
 	
 </head>
 <body>

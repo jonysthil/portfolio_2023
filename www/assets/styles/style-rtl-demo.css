@@ -1634,7 +1634,7 @@ button:focus {
 .case-item__icon {
   margin-right: 1.1875rem;
   height: 2.5rem;
-  width: 2.5rem;
+  /*width: 2.5rem;*/
 }
 @media only screen and (max-width: 580px) {
   .case-item__icon {
