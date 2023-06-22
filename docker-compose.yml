@@ -20,6 +20,7 @@ services:
         restart: unless-stopped
         environment:
             MYSQL_ROOT_PASSWORD: password
+            MYSQL_ROOT_HOST: '%'
         volumes:
             - ./mysql:/var/lib/mysql
         ports:
@@ -46,5 +47,5 @@ services:
 # Definimos el nombre de la red.
 networks:
     jonysthil:
-      driver: bridge
+        driver: bridge
 
