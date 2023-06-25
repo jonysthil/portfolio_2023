@@ -27,6 +27,15 @@
             ArtTemplate
         </div>
     </li> --}}
+    @if ($proyect->prt_url != '')
+    <li class="details-info__item">
+        <span class="box icon-box"><i class="font-icon feathericon-globe"></i></span>
+        <div class="details-info__info">
+            <span class="overhead">URL</span>
+            <a target="_blank" href="{{ $proyect->prt_url }}">View Site</a>
+        </div>
+    </li>
+    @endif
     <!-- Category -->
     <li class="details-info__item">
         <span class="box icon-box"><i class="font-icon feathericon-layers"></i></span>
@@ -45,14 +54,14 @@
     </li>
 </ul>
 
-{!! $proyect->prt_description !!}
+{!! nl2br($proyect->prt_description) !!}
 
 <div class="swiper-container js-carousel-project">
     <div class="swiper-wrapper project-gallery">
         <!-- Item -->
         @foreach ($gallery as $img)
         <figure class="swiper-slide swiper-slide-project">
-            <a id="first" title="click to zoom-in" href="{{ route('p.portfolio.images', $img->pg_id) }}" data-size="1920x1080">
+            <a id="first" title="click to zoom-in" href="{{ route('p.portfolio.images', $img->pg_id) }}" data-size="560x340">
                 <img class="lazyload" src="{{ route('p.portfolio.images', $img->pg_id) }}" alt="{{ $img->pg_name }}" />
             </a>
         </figure>

@@ -33,6 +33,12 @@
                                             @error('prt_date') <span class="text-danger">{!! $message !!}</span> @enderror
                                         </div>
                                     </div>
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label for="prt_url">URL web site</label>
+                                            <input type="text" value="{{ old('prt_url', $proyect->prt_url) }}" name="prt_url" id="prt_url" class="form-control">
+                                        </div>
+                                    </div>
                                 </div>
                                 <div class="row">
                                     <div class="col-md-12">

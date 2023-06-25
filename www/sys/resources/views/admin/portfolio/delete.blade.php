@@ -1,4 +1,4 @@
-<form name="modelForm" method="post">
+<form name="modelFormPort" method="post">
     {{ csrf_field() }}
     {{ method_field('DELETE') }}
     <div class="modal fade text-left" id="portfolio-delete" tabindex="-1" role="dialog" aria-labelledby="myModalLabel1" aria-hidden="true">

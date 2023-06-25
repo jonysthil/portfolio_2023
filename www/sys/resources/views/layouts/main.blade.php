@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8" />
-    <title>@yield('title', 'Jonathan Jimenez')</title>
+    <title>@yield('title', '') :: Jonathan Jimenez Gamero</title>
 
 	<meta name="google-site-verification" content="VwviPaKCWmq2MVC10QT85mRz6Q3qYtQSYeHKe_Hz-PM" />
 
@@ -171,7 +171,7 @@
     <script src="{{ asset('assets/js/common.js') }}"></script>
 
 	<!-- Mapbox init -->
-	<script src="{{ asset('assets/js/mapbox.init.js') }}"></script>
+	{{-- <script src="{{ asset('assets/js/mapbox.init.js') }}"></script> --}}
 
 </body>
 </html>

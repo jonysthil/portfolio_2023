@@ -51,12 +51,12 @@
                                         </div>
                                     </td>
                                     <td>{{ $prt->prt_title }}</td>
-                                    <td>{!! $prt->prt_description !!}</td>
+                                    <td>{!! substr($prt->prt_description, 0, 80) !!} ...</td>
                                     <td style="width: 115px;" class="text-center">
                                         <a href="{{ route('portfolio.detail', $prt->prt_id) }}" class="btn btn-icon btn-pure info mr-1">
                                             <i class="la la-eye"></i>
                                         </a>
-                                        <a class="btn btn-icon btn-pure danger" href="javascript:return false;" onclick="document.modelForm.action='{{ route('portfolio.delete', $prt->prt_id) }}';" data-toggle="modal" data-target="#portfolio-delete"><i class="la la-trash"></i></a>
+                                        <a class="btn btn-icon btn-pure danger" href="javascript:return false;" onclick="document.modelFormPort.action='{{ route('portfolio.delete', $prt->prt_id) }}';" data-toggle="modal" data-target="#portfolio-delete"><i class="la la-trash"></i></a>
                                     </td>
                                 </tr>
                                 @endforeach

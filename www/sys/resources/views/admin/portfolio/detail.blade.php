@@ -16,7 +16,7 @@
                     <div class="col-md-6 text-right">
                         <a class="btn btn-sm btn-danger" 
                             href="javascript:return false;" 
-                            onclick="document.modelForm.action='{{ route('portfolio.delete', $proyect->prt_id) }}';" 
+                            onclick="document.modelFormPort.action='{{ route('portfolio.delete', $proyect->prt_id) }}';" 
                             data-toggle="modal" 
                             data-target="#portfolio-delete">
                             <i class="la la-trash font-medium-1"></i>
@@ -45,8 +45,9 @@
                             </p>
                             <p><b>Title:</b> {{ $proyect->prt_title }}</p>
                             <p><b>Date of delivery:</b> {{ $proyect->prt_date->format('d F, Y') }}</p>
+                            <p><b>URL:</b> <a target="_blank" href="{!! $proyect->prt_url !!}">{{ $proyect->prt_url }}</a></p>
                             <p><b>Description:</b></p>
-                            {!! $proyect->prt_description !!}
+                            {!! nl2br($proyect->prt_description) !!}
 
                         </div>
                     </div>

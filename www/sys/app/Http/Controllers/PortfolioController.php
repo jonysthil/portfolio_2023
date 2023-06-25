@@ -30,10 +30,10 @@ class PortfolioController extends Controller {
 
         $validator = Validator::make($request->all(), [
             'prt_title' => 'required',
-            'prt_date' => 'required'
+            'prt_date' => 'required',
         ],[
             'required.required' => 'Please complete this field',
-            'prt_date.required' => 'Please complete this field'
+            'prt_date.required' => 'Please complete this field',
         ]);
 
         if ($validator->fails()) {
@@ -47,7 +47,8 @@ class PortfolioController extends Controller {
             'prt_title' => $request->get('prt_title'),
             'prt_description' => $request->get('prt_description'),
             'prt_date' => $request->get('prt_date'),
-            'prt_slug' => Tools::clean_text($request->get('prt_title'))
+            'prt_slug' => Tools::clean_text($request->get('prt_title')),
+            'prt_url' => $request->get('prt_url')
         );
 
         $prt_id = PortfolioModel::portfolioSave($data);
@@ -106,7 +107,8 @@ class PortfolioController extends Controller {
             'prt_title' => $request->get('prt_title'),
             'prt_description' => $request->get('prt_description'),
             'prt_date' => $request->get('prt_date'),
-            'prt_slug' => Tools::clean_text($request->get('prt_title'))
+            'prt_slug' => Tools::clean_text($request->get('prt_title')),
+            'prt_url' => $request->get('prt_url')
         );
 
         PortfolioModel::portfolioUpdate($data, $prt_id);

@@ -12,7 +12,7 @@ img.img-gray:hover {
 
 .whats img {
     position: fixed;
-    bottom: 45px;
+    bottom: 50px;
     right: 10px;
     width: 45px;
     -webkit-filter: drop-shadow(2px 2px 5px #000);

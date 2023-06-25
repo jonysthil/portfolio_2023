@@ -115,4 +115,8 @@ Route::post('/contact/message', [WelcomeController::class, 'contactMessage'])->n
 Route::get('/portfolio/images/{prt_id}', [WelcomeController::class, 'imagesPortfolio'])->name('p.portfolio.images');
 Route::get('/portfolio/image/{prt_id}', [WelcomeController::class, 'imagePortfolioHead'])->name('p.portfolio.image.head');
 
-
+// Optimizar.
+Route::get('clear', function() {
+    Artisan::call('optimize:clear');
+    return '<h1>Clear Config cleared</h1>';
+});
