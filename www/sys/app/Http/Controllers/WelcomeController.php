@@ -16,6 +16,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 
 define('DIR_IMAGEN_PORTFOLIO','/var/www/html/uploads/portfolio/');
+define('DIR_NO_IMAGEN','/var/www/html/assets/images/');
 
 class WelcomeController extends Controller {
     
@@ -106,19 +107,23 @@ class WelcomeController extends Controller {
 
     public function imagePortfolioHead($prt_id) {
         //seleccionamos la imagen principal
-        $imagen = '';
+        $imagen = 'no_photo.jpg';
 
         $img = PortfolioGalleryModel::selectHead($prt_id);
         $img_r = PortfolioGalleryModel::selectHeadRandom($prt_id);
 
         if($img->exists()) {
             $imagen = $img->pg_name;
-        } else {
-            $imagen = $img_r->pg_name;
         }
-
-
-        $file = DIR_IMAGEN_PORTFOLIO.$imagen;
+        if($img_r->exists()) {
+            $imagen = $img_r->pg_name;
+        } 
+        
+        if(file_exists(DIR_IMAGEN_PORTFOLIO.$imagen)) {
+            $file = DIR_IMAGEN_PORTFOLIO.$imagen;
+        } else {
+            $file = DIR_NO_IMAGEN.$imagen;
+        } 
         $filename = $imagen;
         
         // Header content type 
