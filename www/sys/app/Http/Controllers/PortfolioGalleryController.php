@@ -36,7 +36,9 @@ class PortfolioGalleryController extends Controller {
 
         $image = Image::make($request->file('pg_name'))
                         ->encode('webp', 100)
-                        ->resize(560, 340);
+                        ->resize(560, 340, function ($constraint) {
+                            $constraint->aspectRatio();
+                        });
 
         $directory = './uploads/portfolio';
 

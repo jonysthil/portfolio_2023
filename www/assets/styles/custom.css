@@ -1,3 +1,11 @@
+:root {
+    --color-accent: #6395f9;
+    --color-gradient: linear-gradient(137.84deg, #6395f9 26.31%, #5ea1ff 93.75%);
+    --color-gradient-text: linear-gradient(90deg, #5ea1ff, #5eb1ff);
+    --color-gradient-border: linear-gradient(155deg, #7a88f1 0%, rgba(255, 191, 96, 0) 50%);
+    --color-gradient-icon: linear-gradient(135deg, rgba(109, 177, 255, 0.25) 0%, rgba(255, 189, 94, 0) 59.86%), #202021;
+  }
+
 img.img-gray {
     -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
     filter: grayscale(100%);

@@ -114,8 +114,7 @@ class WelcomeController extends Controller {
 
         if($img->exists()) {
             $imagen = $img->pg_name;
-        }
-        if($img_r->exists()) {
+        } else if($img_r->exists()) {
             $imagen = $img_r->pg_name;
         } 
         

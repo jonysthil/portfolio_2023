@@ -63,7 +63,7 @@
                         </a>
                     </li>
                     <li class="nav-item mr-auto">
-                        <a class="navbar-brand" href="index.html">
+                        <a class="navbar-brand" href="{{ route('home') }}">
                             <img class="brand-logo" alt="modern admin logo" src="{{ asset('assets/admin/app-assets/images/logo/logo.png') }}">
                             <h3 class="brand-text">Jonysthil</h3>
                         </a></li>
