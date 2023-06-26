@@ -15,8 +15,15 @@ use App\Models\SkillModel;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 
-define('DIR_IMAGEN_PORTFOLIO','/var/www/html/uploads/portfolio/');
-define('DIR_NO_IMAGEN','/var/www/html/assets/images/');
+if($_SERVER["HTTP_HOST"] == "127.0.0.1") {   
+    define('DIR_IMAGEN_PORTFOLIO','/var/www/html/uploads/portfolio/');
+    define('DIR_NO_IMAGEN','/var/www/html/assets/images/');
+} else {
+    define('DIR_IMAGEN_PORTFOLIO','/home/u578082744/public_html/public_html/uploads/portfolio/');
+    define('DIR_NO_IMAGEN','/home/u578082744/public_html/public_html/assets/images/');
+}
+
+
 
 class WelcomeController extends Controller {
     

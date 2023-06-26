@@ -13,23 +13,25 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	<meta name="format-detection" content="telephone=5538030380"/>
     <meta name="format-detection" content="address=Mex, Ecatepec"/>
-    <meta name="author" content="jonysthil :: Jonathan Jimenez" />
-    <meta name="description" content="vCard" />
+	<meta name="description" content="Portafolio de trabajo :: Jonathan Jimenez Gamero">
+	<meta name="keywords" content="Jonathan Jimenez Gamero, jonysthil">
+	<meta name="author" content="Jonathan Jimenez Gamero, jonysthil">
 
-    <!-- Twitter data -->
-    <meta name="twitter:card" content="Jonathan Jimenez Gamero">
-    <meta name="twitter:site" content="@ArtTemplates">
-    <meta name="twitter:title" content="vCard">
-    <meta name="twitter:description" content="vCard">
-    <meta name="twitter:image" content="{{ asset('assets/images/jony-profile.jpg') }}">
-
-    <!-- Open Graph data -->
-    <meta property="og:title" content="Jonathan Jimenez Gamero" />
+	<!-- Facebook Tags -->
+	<meta property="og:title" content="Jonathan Jimenez Gamero" />
+	<meta property="og:description" content="Portafolio de trabajo :: Jonathan Jimenez Gamero" />
+	<meta property="og:image" content="{{ asset('assets/images/jony-profile.jpg') }}" />
+	<meta property="og:url" content="https://jonyjg.com/" />
     <meta property="og:type" content="website" />
-    <meta property="og:url" content="jonyjg.com" />
-    <meta property="og:image" content="{{ asset('assets/images/jony-profile.jpg') }}" />
-    <meta property="og:description" content="vCard" />
-    <meta property="og:site_name" content="vCard" />
+    <meta property="og:site_name" content="Jonathan JG, jonysthil" />
+	<!-- Facebook Tags :: End -->
+
+	<!-- Twitter Tags -->
+    <meta name="twitter:card" content="Jonathan Jimenez Gamero">
+    <meta name="twitter:title" content="Jonathan Jimenez Gamero, jonysthil">
+	<meta name="twitter:description" content="Portafolio de trabajo :: Jonathan Jimenez Gamero" />
+	<meta name="twitter:image:" content="{{ asset('assets/images/jony-profile.jpg') }}" />
+	<meta name="twitter:url" content="https://jonyjg.com/" />
 
 	<!-- Favicons -->
 	<link rel="apple-touch-icon" sizes="144x144" href="{{ asset('assets/images/favicons/apple-touch-icon-144x144.png') }}">
