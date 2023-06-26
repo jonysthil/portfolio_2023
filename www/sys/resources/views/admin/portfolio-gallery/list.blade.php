@@ -28,7 +28,7 @@
                     @foreach ($gallery as $ga)
                     <div id="ord-{{ $ga->pg_id }}" class="col-md-3" itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
                         <figure  class="card card-img-top card-img-bottom border-grey border-lighten-2 mb-0" >
-                            <a href="{{ asset('uploads/portfolio/'.$ga->pg_name) }}" itemprop="contentUrl" data-size="1920x1080">
+                            <a href="{{ asset('uploads/portfolio/'.$ga->pg_name) }}" itemprop="contentUrl" data-size="500x400">
                                 <img class="gallery-thumbnail card-img-top" src="{{ asset('uploads/portfolio/'.$ga->pg_name) }}" itemprop="thumbnail" alt="Image description" />
                             </a>
                         </figure>
