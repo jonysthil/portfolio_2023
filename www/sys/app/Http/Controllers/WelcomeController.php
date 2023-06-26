@@ -107,7 +107,7 @@ class WelcomeController extends Controller {
 
     public function imagePortfolioHead($prt_id) {
         //seleccionamos la imagen principal
-        $imagen = 'no_photo.jpg';
+        $imagen = 'no_photo.png';
 
         $img = PortfolioGalleryModel::selectHead($prt_id);
         $img_r = PortfolioGalleryModel::selectHeadRandom($prt_id);
