@@ -12,6 +12,7 @@ use App\Http\Controllers\PortfolioGalleryController;
 use App\Http\Controllers\ServiceController;
 use App\Http\Controllers\SkillController;
 use App\Http\Controllers\WelcomeController;
+use App\Http\Controllers\XMLController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -114,6 +115,8 @@ Route::post('/contact/message', [WelcomeController::class, 'contactMessage'])->n
 
 Route::get('/portfolio/images/{prt_id}', [WelcomeController::class, 'imagesPortfolio'])->name('p.portfolio.images');
 Route::get('/portfolio/image/{prt_id}', [WelcomeController::class, 'imagePortfolioHead'])->name('p.portfolio.image.head');
+
+Route::get('create-xml', [XMLController::class, 'createXML']);
 
 // Optimizar.
 Route::get('clear', function() {
