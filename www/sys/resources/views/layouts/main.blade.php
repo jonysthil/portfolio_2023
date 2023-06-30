@@ -163,7 +163,7 @@
 
 	<div class="whats">
         <a href="https://wa.me/5215538030380?text=I%20need%20more%20information" target="_blank">
-            <img src="{{ asset('assets/images/whatsapp.png') }}">
+            <img src="{{ asset('assets/images/whatsapp-1.png') }}">
         </a>
     </div>
 	

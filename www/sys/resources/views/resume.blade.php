@@ -85,7 +85,7 @@
         <!-- Item client -->
         @foreach ($skill as $sk)
         <figure class="swiper-slide">
-            <img height="131px" class="img-gray" src="{{ asset('uploads/skill/' . $sk->sk_image) }}" alt="{{ $sk->sk_title }}" title="{{ $sk->sk_title }}" />
+            <img height="131px" width="209px" class="img-gray" src="{{ asset('uploads/skill/' . $sk->sk_image) }}" alt="{{ $sk->sk_title }}" title="{{ $sk->sk_title }}" />
         </figure>
         @endforeach
             

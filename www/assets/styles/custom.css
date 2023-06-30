@@ -20,8 +20,8 @@ img.img-gray:hover {
 
 .whats img {
     position: fixed;
-    bottom: 60px;
-    right: 20px;
+    bottom: 65px;
+    right: 25px;
     width: 35px;
     -webkit-filter: drop-shadow(2px 2px 5px #000);
     z-index: 1005;
@@ -29,7 +29,7 @@ img.img-gray:hover {
 
 @media screen and (max-width: 980px) {
     .whats img {
-        bottom: 130px;
+        bottom: 100px;
         right: 10px;
         width: 40px;
     }
