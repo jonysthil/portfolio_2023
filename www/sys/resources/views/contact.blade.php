@@ -40,10 +40,11 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col-12 col-md-6 order-2 order-md-1 text-center text-md-start">
-                    <div id="validator-contact" class="hidden"></div>
+                <div class="col-12 col-md-6 order-1 order-md-1 text-center text-md-center">
+                    <div class="g-recaptcha" data-theme="dark" data-sitekey="6LcFD8QcAAAAAGcG9gBBa6DsAlIzusjVBRlxvKIR"></div>
+                    @error('g-recaptcha-response') <div class="help-block with-errors">{!! $message !!}</div> @enderror
                 </div>
-                <div class="col-12 col-md-6 order-1 order-md-2 text-end">
+                <div class="col-12 col-md-6 order-2 order-md-2 text-end">
                     <button type="submit" class="btn"><i class="font-icon icon-send"></i> Send Message</button>
                 </div>
             </div>

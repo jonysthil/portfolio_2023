@@ -4,7 +4,14 @@
     --color-gradient-text: linear-gradient(90deg, #5ea1ff, #5eb1ff);
     --color-gradient-border: linear-gradient(155deg, #7a88f1 0%, rgba(255, 191, 96, 0) 50%);
     --color-gradient-icon: linear-gradient(135deg, rgba(109, 177, 255, 0.25) 0%, rgba(255, 189, 94, 0) 59.86%), #202021;
-  }
+}
+
+iframe {
+    background-color: transparent !important;
+    border: 0;
+    display: block;
+    width: 100%;
+}
 
 img.img-gray {
     -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */

@@ -79,14 +79,16 @@ class WelcomeController extends Controller {
             'name_contact' => 'required',
             'email_contact' => 'required|email',
             'phone_contact' => 'required|numeric',
-            'message_contact' => 'required'
+            'message_contact' => 'required',
+            'g-recaptcha-response' => 'required',
         ],[
             'name_contact.required' => 'Please complete this field',
             'email_contact.required' => 'Please complete this field',
             'email_contact.email' => 'It is not a valid email',
             'phone_contact.required' => 'Please complete this field',
             'phone_contact.numeric' => 'Please only numbers',
-            'message_contact.required' => 'Please complete this field'
+            'message_contact.required' => 'Please complete this field',
+            'g-recaptcha-response' => 'Confirm you are not a robot',
         ]);
 
         if ($validator->fails()) {
@@ -96,19 +98,43 @@ class WelcomeController extends Controller {
                         ->withInput();
         }
 
-        $data = array(
-            'cnt_name' => $request->get('name_contact'),
-            'cnt_mail' => $request->get('email_contact'),
-            'cnt_phone' => $request->get('phone_contact'),
-            'cnt_message' => $request->get('message_contact'),
-            'cnt_date' => date('Y-m-d')
-        );
+        $captcha = $request->get('g-recaptcha-response');
 
-        ContactModel::contactSave($data);
+        $url = 'https://www.google.com/recaptcha/api/siteverify';
+            $data = array(
+                'secret' => '6LcFD8QcAAAAABz1PDVve3uG2mexPun8VO7ohhoA',
+                'response' => $captcha,
+                'remoteip' => $_SERVER['REMOTE_ADDR']
+            );
+            $options = array(
+                'http' => array(
+                    'method' => 'POST',
+                    'header' => 'Content-type: application/x-www-form-urlencoded',
+                    'content' => http_build_query($data)
+                )
+            );
+            $context = stream_context_create($options);
+            $verify = file_get_contents($url, false, $context);
+            $captcha_success = json_decode($verify);
 
-        return redirect()
-                    ->route('p.contact')
-                    ->with('success', 'New record.');
+
+            if ($captcha_success->success) {
+
+                $data = array(
+                    'cnt_name' => $request->get('name_contact'),
+                    'cnt_mail' => $request->get('email_contact'),
+                    'cnt_phone' => $request->get('phone_contact'),
+                    'cnt_message' => $request->get('message_contact'),
+                    'cnt_date' => date('Y-m-d')
+                );
+        
+                ContactModel::contactSave($data);
+        
+                return redirect()
+                            ->route('p.contact')
+                            ->with('success', 'New record.');
+            }
+
 
     }
 

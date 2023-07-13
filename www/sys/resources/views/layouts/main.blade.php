@@ -51,15 +51,19 @@
     <link href='https://api.mapbox.com/mapbox-gl-js/v1.4.1/mapbox-gl.css' rel='stylesheet' /> --}}
 
 	<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-JP279D9EDX"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+	<script async src="https://www.googletagmanager.com/gtag/js?id=G-JP279D9EDX"></script>
+	<script>
+		window.dataLayer = window.dataLayer || [];
+		function gtag() {
+			dataLayer.push(arguments); 
+		}
+		gtag('js', new Date());
 
-  gtag('config', 'G-JP279D9EDX');
-</script>
+		gtag('config', 'G-JP279D9EDX');
+	</script>
 	
+	<script src="https://www.google.com/recaptcha/api.js" async defer></script>
+
 </head>
 <body>
     <main class="main">
